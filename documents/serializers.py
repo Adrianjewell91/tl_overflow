@@ -1,10 +1,12 @@
 from rest_framework import serializers
 from documents.models import Document
+from documents.models import Translation
 
 class DocumentSerializer(serializers.ModelSerializer):
+    translations = serializers.StringRelatedField(many=True)
     class Meta:
         model = Document
-        fields = ('id','title','body','language')
+        fields = ('id','title','body','language','translations')
     # id=serializers.IntegerField(read_only=True)
     # title=serializers.CharField(required=False, allow_blank=True, max_length=100)
     # body=serializers.CharField(style={'base_template': 'textarea.html'})
@@ -19,3 +21,8 @@ class DocumentSerializer(serializers.ModelSerializer):
     #     instance.language=validated_data.get('language', instance.language)
     #     instance.save()
     #     return instance
+
+class TranslationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Document
+        fields = ('id','title','body','language')
