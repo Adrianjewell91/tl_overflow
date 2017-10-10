@@ -7,7 +7,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.handleClick = this.handleClick.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleClick(e) {
@@ -21,21 +21,21 @@ class App extends Component {
     })
   }
 
-  // handleSubmit(e) {
-  //   e.preventDefault();
-  //   console.log("Sending a Post!");
-  //   axios.post('/documents', {
-  //     body: "Porfy Test",
-  //     language: "",
-  //     title: "Second-doc"
-  //   })
-  //   .then(function (response) {
-  //     console.log(response);
-  //   })
-  //   .catch(function (error) {
-  //     console.log(error);
-  //   });
-  // }
+  handleSubmit(e) {
+    e.preventDefault();
+    console.log("Sending a Post!");
+    axios.post('http://localhost:8000/documents/', {
+      body: "Porfy Test",
+      language: "",
+      title: "Second-doc"
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
 
   render() {
     return (
@@ -48,6 +48,7 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <button onClick={this.handleClick}>Get Docs</button>
+        <button onClick={this.handleSubmit}>Submit Doc</button>
       </div>
     );
   }
