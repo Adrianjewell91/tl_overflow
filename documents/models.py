@@ -11,3 +11,13 @@ class Document(models.Model):
 
     class Meta:
         ordering = ('created',)
+
+class Translation(models.Model):
+    created = models.DateTimeField(auto_now_add=True)
+    title = models.CharField(max_length=100, blank=True, default='')
+    language = models.CharField(max_length=100, blank=True, default='')
+    body = models.TextField()
+    original_doc_id = models.ForeignKey(Document)
+
+    class Meta:
+        ordering = ('created',)

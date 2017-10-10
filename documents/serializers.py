@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from documents.models import Document
+from documents.models import Translation
 
 class DocumentSerializer(serializers.ModelSerializer):
     class Meta:
@@ -19,3 +20,8 @@ class DocumentSerializer(serializers.ModelSerializer):
     #     instance.language=validated_data.get('language', instance.language)
     #     instance.save()
     #     return instance
+
+class TranslationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Document
+        fields = ('id','title','body','language')
