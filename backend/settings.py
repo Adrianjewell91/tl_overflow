@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'rest_framework.authtoken',
+    'corsheaders',
     # Disable Django's own staticfiles handling in favour of WhiteNoise, for
     # greater consistency between gunicorn and `./manage.py runserver`. See:
     # http://whitenoise.evans.io/en/stable/django.html#using-whitenoise-in-development
@@ -53,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'backend.urls'
@@ -75,7 +77,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'backend.wsgi.application'
-
+CORS_ORIGIN_ALLOW_ALL = True
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
@@ -127,9 +129,9 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
-STATICFILES_DIRS = [
-    os.path.join(PROJECT_ROOT, 'static'),
-]
+STATICFILES_DIRS = (
+    os.path.join(os.path.join(BASE_DIR, 'frontend'), 'build', 'static'),
+)
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
