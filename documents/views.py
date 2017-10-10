@@ -115,4 +115,3 @@ class TranslationViewSet(viewsets.ModelViewSet):
 #     elif request.method == 'DELETE':
 #         Translation.delete()
 #         return HttpResponse(status=204)
->>>>>>> 7abe9b0f35f415d21a57409d62a4219bf0224abe

@@ -14,4 +14,3 @@ urlpatterns = router.urls
 #     url(r'^translations/$',views.translation_list),
 #     url(r'^translations/(?P<pk>[0-9]+)/$',views.translation_detail)
 # ]
->>>>>>> 7abe9b0f35f415d21a57409d62a4219bf0224abe
