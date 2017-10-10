@@ -11,6 +11,11 @@ from documents.serializers import DocumentSerializer
 from documents.serializers import TranslationSerializer
 from rest_framework import viewsets
 
+from django.views.generic import View
+from django.conf import settings
+import os
+
+
 class DocumentViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
@@ -25,8 +30,6 @@ class TranslationViewSet(viewsets.ModelViewSet):
     """
     queryset = Translation.objects.all()
     serializer_class = TranslationSerializer
-
-
 
 # @csrf_exempt
 # def document_list(request):
@@ -115,3 +118,20 @@ class TranslationViewSet(viewsets.ModelViewSet):
 #     elif request.method == 'DELETE':
 #         Translation.delete()
 #         return HttpResponse(status=204)
+
+
+
+
+class ReactAppView(View):
+    def get(self, request):
+        try:
+            with open(os.path.join('frontend', 'build', 'index.html')) as file:
+                return HttpResponse(file.read())
+
+        except :
+            return HttpResponse(
+                """
+                index.html not found ! build your React app !!
+                """,
+                status=501,
+            )
