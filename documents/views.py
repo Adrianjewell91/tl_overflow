@@ -59,11 +59,8 @@ def document_detail(request, pk):
 
 
 class ReactAppView(View):
-    print(os.path.join('../frontend', 'build', 'index.html'))
     def get(self, request):
-
         try:
-
             with open(os.path.join('frontend', 'build', 'index.html')) as file:
                 return HttpResponse(file.read())
 
