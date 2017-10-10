@@ -7,6 +7,9 @@ from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
 from documents.models import Document
 from documents.serializers import DocumentSerializer
+from django.views.generic import View
+from django.conf import settings
+import os
 
 @csrf_exempt
 def document_list(request):
@@ -51,3 +54,20 @@ def document_detail(request, pk):
     elif request.method == 'DELETE':
         document.delete()
         return HttpResponse(status=204)
+
+
+
+
+class ReactAppView(View):
+    def get(self, request):
+        try:
+            with open(os.path.join('frontend', 'build', 'index.html')) as file:
+                return HttpResponse(file.read())
+
+        except :
+            return HttpResponse(
+                """
+                index.html not found ! build your React app !!
+                """,
+                status=501,
+            )
