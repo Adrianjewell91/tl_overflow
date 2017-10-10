@@ -8,7 +8,7 @@ from rest_framework.parsers import JSONParser
 from documents.models import Document
 from documents.models import Translation
 from documents.serializers import DocumentSerializer
-from documents.serializers import TranslationSerializer
+# from documents.serializers import TranslationSerializer
 
 @csrf_exempt
 def document_list(request):
