@@ -22,7 +22,7 @@ class DocumentSerializer(serializers.ModelSerializer):
     #     instance.save()
     #     return instance
 
-# class TranslationSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Document
-#         fields = ('id','title','body','language')
+class TranslationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Document
+        fields = ('id','title','body','language')
