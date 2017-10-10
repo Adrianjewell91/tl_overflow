@@ -120,8 +120,6 @@ class TranslationViewSet(viewsets.ModelViewSet):
 #         return HttpResponse(status=204)
 
 
-
-
 class ReactAppView(View):
     def get(self, request):
         try:
