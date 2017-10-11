@@ -26,7 +26,7 @@ class App extends Component {
     console.log("Sending a Post!");
     axios.post('/documents/', {
       body: "Porfy Test",
-      language: "",
+      language: "en",
       title: "Second-doc"
     })
     .then(function (response) {
