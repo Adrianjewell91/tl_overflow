@@ -46,8 +46,8 @@ class App extends Component {
     e.preventDefault();
     console.log("Creating a User!");
     axios.post('/users/', {
-      username: "PorfyMatias",
-      email: "Porfirio.Matias@outlook.com",
+      username: "AdrianJewell",
+      email: "adrianjewell91@gmail.com",
       password: "createuser1",
       xsrfHeaderName: "X-CSRFToken",
     })
