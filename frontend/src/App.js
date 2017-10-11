@@ -27,7 +27,8 @@ class App extends Component {
     axios.post('/documents/', {
       body: "Porfy Test",
       language: "en",
-      title: "Second-doc"
+      title: "Second-doc",
+      xsrfHeaderName: "X-CSRFToken"
     })
     .then(function (response) {
       console.log(response);

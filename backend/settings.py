@@ -145,3 +145,5 @@ REST_FRAMEWORK = {
       'rest_framework.authentication.TokenAuthentication',
     )
 }
+
+CSRF_COOKIE_NAME = "XSRF-TOKEN"
