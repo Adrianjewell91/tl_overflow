@@ -9,11 +9,20 @@ from django.contrib.auth.models import User
 
 from rest_framework.authtoken.models import Token
 
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.authentication import BasicAuthentication
+
+class CsrfExemptSessionAuthentication(TokenAuthentication):
+
+    def enforce_csrf(self, request):
+        return  # To not perform the csrf check previously happening
+
+
 class UserCreate(APIView):
     """
     Creates the user.
     """
-
+    authentication_classes=(CsrfExemptSessionAuthentication,TokenAuthentication)
     def post(self, request, format='json'):
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
