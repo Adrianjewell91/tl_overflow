@@ -3,11 +3,14 @@ import logo from './logo.svg';
 import axios from 'axios';
 import './App.css';
 
+axios.defaults.xsrfHeaderName = "X-CSRFToken";
+
 class App extends Component {
   constructor(props) {
     super(props)
     this.handleClick = this.handleClick.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.createUser = this.createUser.bind(this);
   }
 
   handleClick(e) {
@@ -26,8 +29,27 @@ class App extends Component {
     console.log("Sending a Post!");
     axios.post('/documents', {
       body: "Porfy Test",
-      language: "",
-      title: "Second-doc"
+      language: "en",
+      title: "Second-doc",
+      xsrfHeaderName: "X-CSRFToken",
+      "translations": []
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+
+  createUser(e) {
+    e.preventDefault();
+    console.log("Creating a User!");
+    axios.post('/users/', {
+      username: "AdrianJewell",
+      email: "adrianjewell91@gmail.com",
+      password: "createuser1",
+      xsrfHeaderName: "X-CSRFToken",
     })
     .then(function (response) {
       console.log(response);
@@ -49,6 +71,7 @@ class App extends Component {
         </p>
         <button onClick={this.handleClick}>Get Docs</button>
         <button onClick={this.handleSubmit}>Submit Doc</button>
+        <button onClick={this.createUser}>Create User</button>
       </div>
     );
   }
