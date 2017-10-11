@@ -28,7 +28,8 @@ class App extends Component {
       body: "Porfy Test",
       language: "en",
       title: "Second-doc",
-      xsrfHeaderName: "X-CSRFToken"
+      xsrfHeaderName: "X-CSRFToken",
+      "translations": []
     })
     .then(function (response) {
       console.log(response);
