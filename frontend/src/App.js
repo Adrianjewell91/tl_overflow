@@ -8,6 +8,7 @@ class App extends Component {
     super(props)
     this.handleClick = this.handleClick.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.createUser = this.createUser.bind(this);
   }
 
   handleClick(e) {
@@ -39,6 +40,23 @@ class App extends Component {
     });
   }
 
+  createUser(e) {
+    e.preventDefault();
+    console.log("Creating a User!");
+    axios.post('/users', {
+      Username: "PorfyMatias",
+      Email: "Porfirio.Matias@outlook.com",
+      password: "createuser1",
+      xsrfHeaderName: "X-CSRFToken"
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -51,6 +69,7 @@ class App extends Component {
         </p>
         <button onClick={this.handleClick}>Get Docs</button>
         <button onClick={this.handleSubmit}>Submit Doc</button>
+        <button onClick={this.createUser}>Create User</button>
       </div>
     );
   }
