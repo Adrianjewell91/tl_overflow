@@ -3,47 +3,46 @@ from django.shortcuts import render
 # Create your views here.
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from django.views.generic import View
+from django.conf import settings
+import os
+from rest_framework import viewsets
 from rest_framework.renderers import JSONRenderer
+from rest_framework.response import Response
 from rest_framework.parsers import JSONParser
 from documents.models import Document
 from documents.models import Translation
 from documents.serializers import DocumentSerializer
 from documents.serializers import TranslationSerializer
-from rest_framework import viewsets
 
-from django.views.generic import View
-from django.conf import settings
-import os
-from rest_framework.response import Response
 
 class DocumentViewSet(viewsets.ViewSet):
     serializer_class = DocumentSerializer
 
     def list(self, request,):
-        queryset = Document.objects.filter()
-        serializer = DocumentSerializer(queryset, many=True)
+        document = Document.objects.filter()
+        serializer = DocumentSerializer(document, many=True)
         return Response(serializer.data)
 
-        def retrieve(self, request, pk=None):
-            queryset = Document.objects.filter()
-            document = get_object_or_404(queryset, pk=pk)
-            serializer = DocumentSerializer(document)
-            return Response(serializer.data)
+    def retrieve(self, request, pk=None):
+        document = Document.objects.get(pk=pk)
+        serializer = DocumentSerializer(document)
+        return Response(serializer.data)
 
 class TranslationViewSet(viewsets.ViewSet):
     serializer_class = TranslationSerializer
 
     def list(self, request, document_pk=None):
-        queryset = Translation.objects.filter(document=document_pk)
-        serializer = TranslationSerializer(queryset, many=True)
+        translations = Translation.objects.filter(document=document_pk)
+        serializer = TranslationSerializer(translations, many=True)
         return Response(serializer.data)
 
-        def retrieve(self, request, pk=None, document_pk=None):
-            queryset = Translation.objects.filter(pk=pk, document=document_pk)
-            translation = get_object_or_404(queryset, pk=pk)
-            serializer = TranslationSerializer(translation)
-            return Response(serializer.data)
+    def retrieve(self, request, pk=None, document_pk=None):
+        translation = Translation.objects.get(pk=pk, document=document_pk)
+        serializer = TranslationSerializer(translation)
+        return Response(serializer.data)
 
+# !!before using drf-nested-routers!!
 # class DocumentViewSet(viewsets.ModelViewSet):
 #     """
 #     API endpoint that allows users to be viewed or edited.
@@ -60,17 +59,15 @@ class TranslationViewSet(viewsets.ViewSet):
 #     serializer_class = TranslationSerializer
 
 
-
-
 # @csrf_exempt
 # def document_list(request):
 #     """
 #     List all code document_list, or create a new document.
 #     """
-#     if request.method == 'GET':
-#         document_list = Document.objects.all()
-#         serializer = DocumentSerializer(document_list, many=True)
-#         return JsonResponse(serializer.data, safe=False)
+    # if request.method == 'GET':
+    #     document_list = Document.objects.all()
+    #     serializer = DocumentSerializer(document_list, many=True)
+    #     return JsonResponse(serializer.data, safe=False)
 #
 #     elif request.method == 'POST':
 #         data = JSONParser().parse(request)
@@ -149,7 +146,6 @@ class TranslationViewSet(viewsets.ViewSet):
 #     elif request.method == 'DELETE':
 #         Translation.delete()
 #         return HttpResponse(status=204)
-
 
 class ReactAppView(View):
     def get(self, request):
