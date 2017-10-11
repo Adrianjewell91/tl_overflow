@@ -3,6 +3,8 @@ import logo from './logo.svg';
 import axios from 'axios';
 import './App.css';
 
+axios.defaults.xsrfHeaderName = "X-CSRFToken";
+
 class App extends Component {
   constructor(props) {
     super(props)
