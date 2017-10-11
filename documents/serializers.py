@@ -11,7 +11,7 @@ class DocumentSerializer(serializers.ModelSerializer):
     # title=serializers.CharField(required=False, allow_blank=True, max_length=100)
     # body=serializers.CharField(style={'base_template': 'textarea.html'})
     # language=serializers.CharField(required=False)
-    #
+
     # def create(self,validated_data):
     #     return Document.objects.create(**validated_data)
     #
