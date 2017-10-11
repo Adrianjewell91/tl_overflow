@@ -16,7 +16,7 @@ class App extends Component {
   handleClick(e) {
     e.preventDefault();
     console.log("Sending a GET API Call !!!");
-    axios.get('/documents/')
+    axios.get('/documents')
     .then(res => {
             console.log(res)
     }).then(response => {
@@ -27,7 +27,7 @@ class App extends Component {
   handleSubmit(e) {
     e.preventDefault();
     console.log("Sending a Post!");
-    axios.post('/documents/', {
+    axios.post('/documents', {
       body: "Porfy Test",
       language: "en",
       title: "Second-doc",
