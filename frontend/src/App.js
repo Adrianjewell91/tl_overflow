@@ -3,6 +3,8 @@ import logo from './logo.svg';
 import axios from 'axios';
 import './App.css';
 
+axios.defaults.xsrfHeaderName = "X-CSRFToken";
+
 class App extends Component {
   constructor(props) {
     super(props)
@@ -43,11 +45,11 @@ class App extends Component {
   createUser(e) {
     e.preventDefault();
     console.log("Creating a User!");
-    axios.post('/users', {
-      Username: "PorfyMatias",
-      Email: "Porfirio.Matias@outlook.com",
+    axios.post('/users/', {
+      username: "PorfyMatias",
+      email: "Porfirio.Matias@outlook.com",
       password: "createuser1",
-      xsrfHeaderName: "X-CSRFToken"
+      xsrfHeaderName: "X-CSRFToken",
     })
     .then(function (response) {
       console.log(response);
