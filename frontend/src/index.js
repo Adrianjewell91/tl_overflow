@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import App from './App.jsx';
 
 import { Provider } from 'react-redux';
+import { HashRouter } from 'react-router-dom';
+
 import configureStore from './store/store'
 import * as DocActions from './actions/documents_actions';
 
@@ -14,5 +16,7 @@ window.dispatch = store.dispatch;
 
 ReactDOM.render(
   <Provider store={store}>
-    <App/>
+    <HashRouter>
+      <App/>
+    </HashRouter>
   </Provider>, document.getElementById('root'));

@@ -24,7 +24,7 @@ class DocumentsIndex extends React.Component {
         <ul>
         {
           this.props.documents.map((doc) => {
-            return (<li key={doc.title}>
+            return (<li key={doc.id}>
                         {doc.title} ({doc.language}): {doc.body}</li>)})
         }
         </ul>
