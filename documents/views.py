@@ -24,10 +24,21 @@ class DocumentViewSet(viewsets.ViewSet):
         serializer = DocumentSerializer(document, many=True)
         return Response(serializer.data)
 
+    def create(self, request,):
+        document = Document.objects.filter()
+        serializer = DocumentSerializer(document, many=True)
+        return Response(serializer.data)
+
     def retrieve(self, request, pk=None):
         document = Document.objects.get(pk=pk)
         serializer = DocumentSerializer(document)
         return Response(serializer.data)
+
+    def destroy(self, request, pk=None):
+        document = Document.objects.get(pk=pk)
+        serializer = DocumentSerializer(document)
+        return Response(serializer.data)
+
 
 class TranslationViewSet(viewsets.ViewSet):
     serializer_class = TranslationSerializer
