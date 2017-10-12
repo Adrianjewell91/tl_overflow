@@ -26,8 +26,11 @@ class DocumentViewSet(viewsets.ViewSet):
 
     def create(self, request,):
         document = Document.objects.filter()
-        serializer = DocumentSerializer(document, many=True)
-        return Response(serializer.data)
+        serializer = DocumentSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=201)
+        return Response(serializer.errors, status=400)
 
     def retrieve(self, request, pk=None):
         document = Document.objects.get(pk=pk)
