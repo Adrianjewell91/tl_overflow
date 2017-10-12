@@ -44,8 +44,8 @@ class App extends Component {
     e.preventDefault();
     console.log("Creating a User");
     axios.post('/users/', {
-      username: "PorfyMatias",
-      email: "porfirio.matias@outlook.com",
+      username: "AdrianJ",
+      email: "Adrian.J@outlook.com",
       password: "Dom987654321"
     })
     .then(function (response) {
