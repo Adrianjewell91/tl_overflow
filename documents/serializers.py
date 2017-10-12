@@ -3,7 +3,7 @@ from documents.models import Document
 from documents.models import Translation
 
 class DocumentSerializer(serializers.ModelSerializer):
-    translations = serializers.StringRelatedField(many=True)
+    translations = serializers.StringRelatedField(many=True, required=False)
     class Meta:
         model = Document
         fields = ('id','title','body','language','translations')
