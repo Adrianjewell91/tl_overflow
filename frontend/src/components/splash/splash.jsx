@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-
 axios.defaults.xsrfHeaderName = "X-CSRFToken";
 
 class Splash extends Component {
