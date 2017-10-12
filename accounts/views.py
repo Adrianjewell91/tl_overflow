@@ -14,6 +14,11 @@ class UserCreate(APIView):
     """
     Creates the user.
     """
+    # def get(self, request, format='json'):
+    #     document = User.objects.get(pk=pk)
+    #     serializer = UserSerializer(document)
+    #     return Response(serializer.data)
+
     def post(self, request, format='json'):
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
@@ -25,5 +30,3 @@ class UserCreate(APIView):
                 return Response(json, status=status.HTTP_201_CREATED)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-    

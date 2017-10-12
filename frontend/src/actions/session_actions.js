@@ -9,27 +9,27 @@ export const receiveCurrentUser = (currentUser) => ({
   currentUser
 });
 
-export const receiveErrors = errors => ({
-  type: RECEIVE_SESSION_ERRORS,
-  errors
-});
+// export const receiveErrors = errors => ({
+//   type: RECEIVE_SESSION_ERRORS,
+//   errors
+// });
+//
+// export const clearSessionErrors = () => ({
+//   type: CLEAR_SESSION_ERRORS,
+// });
 
-export const clearSessionErrors = () => ({
-  type: CLEAR_SESSION_ERRORS,
-});
 
-
-export const signup = formUser => dispatch => {
+export const signUp = formUser => dispatch => {
   return SessionUtil.createUser(formUser)
-    .then(user => dispatch(receiveCurrentUser(user)))
+    .then(user => dispatch(receiveCurrentUser(user.data)))
 };
 
-export const login = formUser => dispatch => {
-  return SessionUtil.createSession(formUser)
-    .then(user => dispatch(receiveCurrentUser(user)))
-    .fail(err => dispatch(receiveErrors(err)));
-};
+// export const login = formUser => dispatch => {
+//   return SessionUtil.createSession(formUser)
+//     .then(user => dispatch(receiveCurrentUser(user)))
+//     .fail(err => dispatch(receiveErrors(err)));
+// };
 
-export const logout = () => dispatch => {
-  return SessionUtil.destroySession().then(() => dispatch(receiveCurrentUser(null)));
-};
+// export const logout = () => dispatch => {
+//   return SessionUtil.destroySession().then(() => dispatch(receiveCurrentUser(null)));
+// };
