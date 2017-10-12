@@ -137,4 +137,4 @@ STATICFILES_DIRS = (
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-SRF_COOKIE_NAME = "XSRF-TOKEN"
+CSRF_COOKIE_NAME = "XSRF-TOKEN"

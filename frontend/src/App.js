@@ -3,7 +3,8 @@ import logo from './logo.svg';
 import axios from 'axios';
 import './App.css';
 
-axios.defaults.xsrfHeaderName = "X-CSRFToken";
+axios.defaults.xsrfCookieName = 'csrftoken'
+axios.defaults.xsrfHeaderName = 'X-CSRFToken'
 
 class App extends Component {
   constructor(props) {
@@ -28,7 +29,7 @@ class App extends Component {
     console.log("Sending a Post!");
     axios.post('/documents/', {
       body: "Porfy Test",
-      language: "",
+      language: "en",
       title: "Second-doc"
     })
     .then(function (response) {
