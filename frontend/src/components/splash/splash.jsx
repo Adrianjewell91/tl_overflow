@@ -7,12 +7,19 @@ class Splash extends Component {
   constructor(props) {
     super(props);
     this.handleSignUp = this.handleSignUp.bind(this);
+    this.handleLogIn = this.handleLogIn.bind(this);
     this.state = {username: "", email: "", password: ""};
   }
 
   handleSignUp(e) {
     e.preventDefault();
     this.props.signUp(this.state);
+  }
+
+  handleLogIn(e) {
+    e.preventDefault();
+    console.log(this.state);
+    this.props.logIn(this.state);
   }
 
   update(field) {
@@ -47,6 +54,7 @@ class Splash extends Component {
 
             <input type="submit" value="Sign Up"></input>
           </form>
+            <button onClick={this.handleLogIn}>Log In</button>
       </div>
     );
   }

@@ -24,11 +24,11 @@ export const signUp = formUser => dispatch => {
     .then(user => dispatch(receiveCurrentUser(user.data)))
 };
 
-// export const login = formUser => dispatch => {
-//   return SessionUtil.createSession(formUser)
-//     .then(user => dispatch(receiveCurrentUser(user)))
-//     .fail(err => dispatch(receiveErrors(err)));
-// };
+export const logIn = formUser => dispatch => {
+  return SessionUtil.fetchUser(formUser)
+    .then(user => dispatch(receiveCurrentUser(user.data)))
+    // .fail(err => dispatch(receiveErrors(err)));
+};
 
 // export const logout = () => dispatch => {
 //   return SessionUtil.destroySession().then(() => dispatch(receiveCurrentUser(null)));
