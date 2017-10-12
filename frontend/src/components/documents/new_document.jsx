@@ -3,7 +3,7 @@ import React from 'react';
 class DocumentForm extends React.Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(e) {
