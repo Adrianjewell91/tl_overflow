@@ -3,11 +3,14 @@ import logo from './logo.svg';
 import axios from 'axios';
 import './App.css';
 
+axios.defaults.xsrfHeaderName = "X-CSRFToken";
+
 class App extends Component {
   constructor(props) {
     super(props)
     this.handleClick = this.handleClick.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleCreateUser = this.handleCreateUser.bind(this);
   }
 
   handleClick(e) {
@@ -37,6 +40,22 @@ class App extends Component {
     });
   }
 
+  handleCreateUser(e) {
+    e.preventDefault();
+    console.log("Creating a User");
+    axios.post('/users/', {
+      username: "PorfyMatias",
+      email: "porfirio.matias@outlook.com",
+      password: "Dom987654321"
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -49,6 +68,7 @@ class App extends Component {
         </p>
         <button onClick={this.handleClick}>Get Docs</button>
         <button onClick={this.handleSubmit}>Submit Doc</button>
+      <button onClick={this.handleCreateUser}>Create User</button>
       </div>
     );
   }
