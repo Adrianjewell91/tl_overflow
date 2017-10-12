@@ -26,17 +26,23 @@ class DocumentViewSet(viewsets.ViewSet):
         return Response(serializer.data)
 
     def create(self, request,):
-        data = JSONParser().parse(request)
-        serializer = DocumentSerializer(data=data)
+        document = Document.objects.filter()
+        serializer = DocumentSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return JsonResponse(serializer.data, status=201)
-        return JsonResponse(serializer.errors, status=400)
+            return Response(serializer.data, status=201)
+        return Response(serializer.errors, status=400)
 
     def retrieve(self, request, pk=None):
         document = Document.objects.get(pk=pk)
         serializer = DocumentSerializer(document)
         return Response(serializer.data)
+
+    def destroy(self, request, pk=None):
+        document = Document.objects.get(pk=pk)
+        serializer = DocumentSerializer(document)
+        return Response(serializer.data)
+
 
 class TranslationViewSet(viewsets.ViewSet):
     serializer_class = TranslationSerializer
