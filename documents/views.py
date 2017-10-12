@@ -10,6 +10,7 @@ from rest_framework import viewsets
 from rest_framework.renderers import JSONRenderer
 from rest_framework.response import Response
 from rest_framework.parsers import JSONParser
+
 from documents.models import Document
 from documents.models import Translation
 from documents.serializers import DocumentSerializer
@@ -23,6 +24,14 @@ class DocumentViewSet(viewsets.ViewSet):
         document = Document.objects.filter()
         serializer = DocumentSerializer(document, many=True)
         return Response(serializer.data)
+
+    def create(self, request,):
+        data = JSONParser().parse(request)
+        serializer = DocumentSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse(serializer.data, status=201)
+        return JsonResponse(serializer.errors, status=400)
 
     def retrieve(self, request, pk=None):
         document = Document.objects.get(pk=pk)
