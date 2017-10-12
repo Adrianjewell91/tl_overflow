@@ -22,3 +22,8 @@ export const createDocument = (a_document) => (dispatch) => {
   return DocumentsUtil.createDocument(a_document)
     .then((a_document) => dispatch(receiveDocument(a_document.data)))
 };
+
+export const requestDocument = (id) => (dispatch) => {
+  return DocumentsUtil.getDocument(id)
+    .then((a_document) => dispatch(receiveDocument(a_document.data)))
+};

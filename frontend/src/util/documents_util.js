@@ -7,3 +7,7 @@ export const getDocuments = () => {
 export const createDocument = (data) => {
   return axios.post('/documents/', data);
 }
+
+export const getDocument = (id) => {
+  return axios.get(`/documents/${id}/`);
+}
