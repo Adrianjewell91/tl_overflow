@@ -5,7 +5,7 @@ import DocumentsIndex from './documents_index';
 
 const mapStateToProps = state => {
   return {
-    originals: Object.values(state.entities.documents)
+    documents: Object.values(state.entities.documents)
   };
 }
 

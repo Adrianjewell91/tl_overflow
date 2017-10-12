@@ -6,15 +6,29 @@ class DocumentsIndex extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(e) {
-    e.preventDefault();
+  componentDidMount() {
     this.props.requestDocuments();
   }
 
+  handleClick(e) {
+    e.preventDefault();
+    this.props.requestDocuments();
+    console.log(this.props.documents);
+  }
+
+//I want to show them on the page.
   render() {
     return (
       <div>
-        <button onClick={this.handleClick}>Fill the state with docs!</button>
+        <h1>Documents</h1>
+        <ul>
+        {
+          this.props.documents.map((doc) => {
+            return (<li key={doc.title}>
+                        {doc.title} ({doc.language}): {doc.body}</li>)})
+        }
+        </ul>
+        <button onClick={this.handleClick}>Log Props.documents</button>
       </div>
     );
   }
