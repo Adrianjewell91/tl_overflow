@@ -7,6 +7,7 @@ from django.core.urlresolvers import reverse
 from rest_framework.test import APITestCase
 from django.contrib.auth.models import User
 from rest_framework import status
+from rest_framework.authtoken.models import Token
 
 class AccountsTest(APITestCase):
     def setUp(self):
@@ -136,3 +137,19 @@ class AccountsTest(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         self.assertEqual(User.objects.count(), 1)
         self.assertEqual(len(response.data['email']), 1)
+
+    def test_create_user(self):
+        """
+        Ensure we can create a new user and a valid token is created with it.
+        """
+        data = {
+                'username': 'foobar',
+                'email': 'foobar@example.com',
+                'password': 'somepassword'
+                }
+
+        response = self.client.post(self.create_url , data, format='json')
+        user = User.objects.latest('id')
+
+        token = Token.objects.get(user=user)
+        self.assertEqual(response.data['token'], token.key)
