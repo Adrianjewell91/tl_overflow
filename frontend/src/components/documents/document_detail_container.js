@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { requestDocument } from "../../actions/documents_actions";
 import DocumentDetail from './documents_index';
 
@@ -15,4 +16,4 @@ const mapDispatchToProps = dispatch => {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(DocumentDetail);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(DocumentDetail));
