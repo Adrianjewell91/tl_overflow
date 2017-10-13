@@ -8,7 +8,7 @@ const DocumentsReducer = (state = {}, action) => {
       action.documents.forEach((el) => new_state[el.id] = el);
       return new_state;
     case RECEIVE_DOCUMENT:
-      return {[action.a_document.id]: action.a_document};
+      return action.a_document;
     default:
       return state;
   }
