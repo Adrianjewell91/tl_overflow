@@ -16,7 +16,7 @@ class DocumentDetail extends React.Component {
       <div>
         <h1>Document Detail</h1>
         <ul>
-          <li>{this.props.document.title}</li>
+          <li>{this.props.document.title}: {this.props.document.body}</li>
           <TranslationsIndexContainer />
         </ul>
         <button>Create a Translation</button>
