@@ -12,7 +12,8 @@ class DocumentDetail extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestDocument("1").then(res => this.setState(res));
+    this.props.requestDocument(this.props.match.params.documentId)
+      .then(res => this.setState(res));
   }
 
   render() {

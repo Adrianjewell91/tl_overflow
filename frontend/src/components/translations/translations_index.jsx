@@ -7,7 +7,7 @@ class TranslationsIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestTranslations("1");
+    this.props.requestTranslations(this.props.match.params.documentId);
   }
 
   handleClick(e) {
