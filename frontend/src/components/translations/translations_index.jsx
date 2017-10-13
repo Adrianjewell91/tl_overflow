@@ -7,7 +7,7 @@ class TranslationsIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestTranslations("1");
+    this.props.requestTranslations(this.props.match.params.documentId);
   }
 
   handleClick(e) {
@@ -16,7 +16,6 @@ class TranslationsIndex extends React.Component {
     console.log(this.props.translations);
   }
 
-//I want to show them on the page.
   render() {
     return (
       <div>

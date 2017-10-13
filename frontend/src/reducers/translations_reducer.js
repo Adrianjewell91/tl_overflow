@@ -1,6 +1,7 @@
 import { RECEIVE_TRANSLATIONS,
          RECEIVE_TRANSLATION
        } from '../actions/translation_actions';
+import { RECEIVE_DOCUMENTS } from "../actions/documents_actions"
 
 const TranslationsReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -11,6 +12,8 @@ const TranslationsReducer = (state = {}, action) => {
       return new_state;
     case RECEIVE_TRANSLATION:
       return {[action.a_translation.id]: action.a_translation};
+    case RECEIVE_DOCUMENTS:
+      return {};
     default:
       return state;
   }
