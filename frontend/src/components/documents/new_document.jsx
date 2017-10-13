@@ -29,7 +29,7 @@ class DocumentForm extends React.Component {
             .then((res) => {
               debugger
               this.props.createTranslation(resFromCreate.a_document.id, {
-                title: `${this.state.title}_TR`,
+                title: `${resFromCreate.title}_TR`,
                 body: `${res.data.text[0]}`,
                 language: `${res.data.lang}`
               })

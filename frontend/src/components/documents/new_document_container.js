@@ -12,7 +12,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     createDocument: formDocument => dispatch(createDocument(formDocument)),
-    createTranslation: formTranslaton => dispatch(createTranslation(formTranslaton))
+    createTranslation: (doc_id, formTranslation) => dispatch(createTranslation(doc_id, formTranslation))
   };
 };
 
