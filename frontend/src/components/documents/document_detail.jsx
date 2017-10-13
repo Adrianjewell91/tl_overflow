@@ -3,12 +3,7 @@ import TranslationsIndexContainer from "../translations/translations_index_conta
 class DocumentDetail extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      title: "",
-      body: "",
-      language: "",
-      translations: []
-    }
+    this.state = this.props.document || { title: "", body: "", language: "", translations: [] };
   }
 
   componentDidMount() {
@@ -17,13 +12,11 @@ class DocumentDetail extends React.Component {
   }
 
   render() {
-    let name = this.props.document.title;
-
     return (
       <div>
         <h1>Document Detail</h1>
         <ul>
-          <li>{name}</li>
+          <li>{this.props.document.title}: {this.props.document.body}</li>
           <TranslationsIndexContainer />
         </ul>
         <button>Create a Translation</button>
