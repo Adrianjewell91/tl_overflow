@@ -21,7 +21,8 @@ class DocumentForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createDocument(this.state).then(() => {
+    this.props.createDocument(this.state)
+    .then(() => {
       let newState = merge({}, this.state, {
         title: "",
         body: "",
