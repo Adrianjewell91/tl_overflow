@@ -7,10 +7,12 @@ import { HashRouter } from 'react-router-dom';
 
 import configureStore from './store/store'
 import * as DocActions from './actions/documents_actions';
+import * as TActions from './actions/translation_actions';
 
 const store = configureStore();
 
 window.DocActions = DocActions;
+window.TActions = TActions
 window.getState = store.getState;
 window.dispatch = store.dispatch;
 

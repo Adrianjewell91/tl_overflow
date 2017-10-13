@@ -1,5 +1,6 @@
 import React from "react";
 import merge from "lodash/merge";
+import axios from "axios";
 
 class DocumentForm extends React.Component {
   constructor(props) {
@@ -22,14 +23,25 @@ class DocumentForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createDocument(this.state)
-    .then(() => {
-      let newState = merge({}, this.state, {
-        title: "",
-        body: "",
-        language: ""
+      .then((resFromCreate) => {
+        axios.post(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20171012T140121Z.b998082e631b287c.a28e1ccdc8860c80b45b5019fccbdb8bba60497a&text=${this.state.body}&lang=${this.state.language}`)
+            .then((res) => {
+              this.props.createTranslation(resFromCreate.a_document.id, {
+                title: `${resFromCreate.a_document.title}_TR`,
+                body: `${res.data.text[0]}`,
+                language: `${res.data.lang}`
+              })
+            })
+      })
+
+      .then(() => {
+        let newState = merge({}, this.state, {
+          title: "",
+          body: "",
+          language: ""
+        });
+        this.setState(newState);
       });
-      this.setState(newState);
-    });
   }
 
   render() {

@@ -58,6 +58,7 @@ class TranslationViewSet(viewsets.ViewSet):
         return Response(serializer.data)
 
     def create(self, request, document_pk=None):
+        # import pdb; pdb.set_trace()
         new = Translation(title=request.data['title'],
                           language=request.data['language'],
                           body=request.data['body'],
