@@ -10,7 +10,7 @@ const DocumentsReducer = (state = {}, action) => {
     case RECEIVE_DOCUMENT:
       return {[action.a_document.id]: action.a_document};
     default:
-      return {};
+      return state;
   }
 };
 

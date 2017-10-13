@@ -1,5 +1,5 @@
 import React from 'react';
-
+import TranslationsIndexContainer from "../translations/translations_index_container";
 class DocumentDetail extends React.Component {
   constructor(props) {
     super(props);
@@ -17,21 +17,13 @@ class DocumentDetail extends React.Component {
 
   render() {
     let name = this.props.document.title;
-    let translations;
-    if (this.props.document.translations !== undefined) {
-      translations = this.props.document.translations.map((tran, idx) => {
-        return <li>{tran}</li>
-      })
-    } else {
-      translations = ""
-    }
 
     return (
       <div>
         <h1>Document Detail</h1>
         <ul>
           <li>{name}</li>
-          { translations }
+          <TranslationsIndexContainer />
         </ul>
         <button>Create a Translation</button>
       </div>
