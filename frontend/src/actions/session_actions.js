@@ -21,12 +21,12 @@ export const receiveCurrentUser = (currentUser) => ({
 
 export const signUp = formUser => dispatch => {
   return SessionUtil.createUser(formUser)
-    .then(user => dispatch(receiveCurrentUser(user.data)))
+    .then(user => dispatch(receiveCurrentUser(user.data.token)))
 };
 
 export const logIn = formUser => dispatch => {
   return SessionUtil.fetchUser(formUser)
-    .then(user => dispatch(receiveCurrentUser(user.data)))
+    .then(user => dispatch(receiveCurrentUser(user.data.token)))
     // .fail(err => dispatch(receiveErrors(err)));
 };
 

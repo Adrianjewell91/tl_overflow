@@ -19,7 +19,8 @@ class Splash extends Component {
   handleLogIn(e) {
     e.preventDefault();
     console.log(this.state);
-    this.props.logIn(this.state);
+    this.props.logIn({username: this.state.username,
+                      password: this.state.password});
   }
 
   update(field) {
