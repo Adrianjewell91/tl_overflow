@@ -45,7 +45,7 @@ class Splash extends Component {
             <label>
               <input type="text"
                      onChange={this.update('email')}
-                     placeholder="Email"
+                     placeholder="Email (Sign up only)"
                      value={this.state.email}></input>
             </label>
 

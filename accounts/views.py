@@ -14,11 +14,6 @@ class UserCreate(APIView):
     """
     Creates the user.
     """
-    # def get(self, request, format='json'):
-    #     user = User.objects.get(username='adrian')
-    #     serializer = UserSerializer(user)
-    #     return Response(serializer.data)
-
     def post(self, request, format='json'):
         # import pdb; pdb.set_trace()s
         serializer = UserSerializer(data=request.data)
