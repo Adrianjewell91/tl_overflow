@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-
-axios.defaults.xsrfHeaderName = "X-CSRFToken";
 
 class Splash extends Component {
   constructor(props) {
@@ -9,6 +6,10 @@ class Splash extends Component {
     this.handleSignUp = this.handleSignUp.bind(this);
     this.handleLogIn = this.handleLogIn.bind(this);
     this.state = {username: "", email: "", password: ""};
+  }
+
+  componentWillMount() {
+    //redirect if currentUser
   }
 
   handleSignUp(e) {
@@ -24,12 +25,12 @@ class Splash extends Component {
   }
 
   update(field) {
-  return (e) => { //no periods allowed for some reason.
-    console.log(this.state);
-    this.setState({[field]: e.target.value});
+    return (e) => { //no periods allowed for some reason.
+      console.log(this.state);
+      this.setState({[field]: e.target.value});
+    }
   }
-}
-//ADD VALUE={} TO INPUTS
+
   render() {
     return (
       <div>
