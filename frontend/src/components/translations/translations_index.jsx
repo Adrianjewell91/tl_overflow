@@ -16,10 +16,7 @@ class TranslationsIndex extends React.Component {
     console.log(this.props.translations);
   }
 
-//I want to show them on the page.
   render() {
-    debugger
-    Object.keys(this.props.translations)
     return (
       <div>
         {
