@@ -11,7 +11,6 @@ const TranslationsReducer = (state = {}, action) => {
       action.translations.forEach((el) => new_state[el.id] = el);
       return new_state;
     case RECEIVE_TRANSLATION:
-      debugger
       return {[action.translation.id]: action.translation};
     case RECEIVE_DOCUMENTS:
       return {};
