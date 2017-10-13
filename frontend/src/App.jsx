@@ -15,6 +15,7 @@ class App extends Component {
         <Switch>
           <Route path="/index" component={DocumentsIndexContainer}/>
           <Route path="/new" component={DocumentFormContainer}/>
+          <Route path="documents/:documentId" component={DocumentDetailContainer}/>
           <Route path="/" component={SplashContainer}/>
         </Switch>
       </div>
@@ -23,7 +24,3 @@ class App extends Component {
 }
 
 export default App;
-
-/* <DocumentsContainer/> */
-/* <DocumentFormContainer/>
-<SplashContainer/> */
