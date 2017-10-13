@@ -5,6 +5,7 @@ class Splash extends Component {
     super(props);
     this.handleSignUp = this.handleSignUp.bind(this);
     this.handleLogIn = this.handleLogIn.bind(this);
+    this.handleSignOut = this.handleSignOut.bind(this);
     this.state = {username: "", email: "", password: ""};
   }
 
@@ -24,6 +25,11 @@ class Splash extends Component {
                       password: this.state.password});
   }
 
+  handleSignOut(e) {
+    e.preventDefault();
+    console.log('sign out now');
+  }
+
   update(field) {
     return (e) => { //no periods allowed for some reason.
       console.log(this.state);
@@ -32,9 +38,9 @@ class Splash extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <h1>Get better results at Translate OverFlow</h1>
+    const form = this.props.currentUser ?
+      <button onClick={this.signOut}>Your logged in. Sign Out!</button> :
+        <div>
           <form onSubmit={this.handleSignUp}>
             <label>
               <input type="text"
@@ -60,6 +66,13 @@ class Splash extends Component {
             <input type="submit" value="Sign Up"></input>
           </form>
             <button onClick={this.handleLogIn}>Log In</button>
+        </div>
+
+
+    return (
+      <div>
+        <h1>Get better results at Translate OverFlow</h1>
+        {form}
       </div>
     );
   }
