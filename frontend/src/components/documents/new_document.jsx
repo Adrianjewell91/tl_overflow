@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import merge from "lodash/merge";
 
 class DocumentForm extends React.Component {
@@ -54,7 +54,7 @@ class DocumentForm extends React.Component {
 
           <input
             type="text"
-            placeholder="Lang1 into Lang2"
+            placeholder="Lang1 to Lang2"
             onChange={this.updateField("language")}
             value={this.state.language}
           />
