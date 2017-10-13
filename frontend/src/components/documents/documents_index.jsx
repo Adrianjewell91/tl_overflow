@@ -26,7 +26,7 @@ class DocumentsIndex extends React.Component {
         {
           this.props.documents.map((doc) => {
             return (<li key={doc.id}>
-                        {doc.title} ({doc.language}): <Link to={`/documents/${doc.id}`}>Translation</Link></li>)})
+                  {doc.id}:{doc.title} ({doc.language}): <Link to={`/documents/${doc.id}`}>Translation</Link></li>)})
         }
         </ul>
         <button onClick={this.handleClick}>Log Props.documents</button>

@@ -6,8 +6,8 @@ import DocumentDetail from './document_detail';
 
 
 const mapStateToProps = (state, ownProps) => {
-  if (state.entities.documents[1]) {
-    return { document: state.entities.documents[1] }
+  if (state.entities.documents) {
+    return { document: state.entities.documents }
   } else {
     return { document: Object.values(state.entities.documents) }
   }
