@@ -1,5 +1,6 @@
 import React from 'react';
 import TranslationsIndexContainer from "../translations/translations_index_container";
+
 class DocumentDetail extends React.Component {
   constructor(props) {
     super(props);
@@ -17,8 +18,8 @@ class DocumentDetail extends React.Component {
         <h1>Document Detail</h1>
         <ul>
           <li>{this.props.document.title}: {this.props.document.body}</li>
-          <TranslationsIndexContainer />
         </ul>
+        <TranslationsIndexContainer />
         <button>Create a Translation</button>
       </div>
     );
