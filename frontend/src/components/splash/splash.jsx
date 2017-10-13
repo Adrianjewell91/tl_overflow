@@ -28,7 +28,7 @@ class Splash extends Component {
     this.setState({[field]: e.target.value});
   }
 }
-
+//ADD VALUE={} TO INPUTS
   render() {
     return (
       <div>
