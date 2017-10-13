@@ -19,6 +19,6 @@ export const requestTranslations = (doc_id) => (dispatch) => {
 };
 
 export const createTranslation = (doc_id, translation) => (dispatch) => {
-  return TranslationsUtil.createTranslation(translation)
+  return TranslationsUtil.createTranslation(doc_id, translation)
     .then((translation) => dispatch(receiveTranslation(translation.data)))
 };
