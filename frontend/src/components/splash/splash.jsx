@@ -37,19 +37,22 @@ class Splash extends Component {
             <label>
               <input type="text"
                      onChange={this.update('username')}
-                     placeholder="Username"></input>
+                     placeholder="Username"
+                     value={this.state.username}></input>
             </label>
 
             <label>
               <input type="text"
                      onChange={this.update('email')}
-                     placeholder="Email"></input>
+                     placeholder="Email"
+                     value={this.state.email}></input>
             </label>
 
             <label>
               <input type="text"
                      onChange={this.update('password')}
-                     placeholder="Password"></input>
+                     placeholder="Password"
+                     value={this.state.password}></input>
             </label>
 
             <input type="submit" value="Sign Up"></input>
