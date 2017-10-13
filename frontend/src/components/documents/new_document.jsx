@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import merge from "lodash/merge";
 
 class DocumentForm extends React.Component {
   constructor(props) {
@@ -41,6 +42,7 @@ class DocumentForm extends React.Component {
             onChange={this.updateField("title")}
             value={this.state.title}
           />
+          <br />
 
           <input
             type="text"
@@ -48,6 +50,7 @@ class DocumentForm extends React.Component {
             onChange={this.updateField("body")}
             value={this.state.body}
           />
+          <br />
 
           <input
             type="text"
