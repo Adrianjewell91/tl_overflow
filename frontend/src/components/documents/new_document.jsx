@@ -1,62 +1,66 @@
-import React from "react";
+import React, { Component } from "react";
 
 class DocumentForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        title: "",
-        body: "",
-        language: ""
+      title: "",
+      body: "",
+      language: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  updateNewDocField(){
+  updateField(field) {
     return e => {
-      let newState = merge({}, this.state, {
-        document: { body: e.target.value }
-      });
-      // this.setState(newState);
-    }
+      let newState = merge({}, this.state, { [field]: e.target.value });
+      this.setState(newState);
+    };
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createDocument(this.state.document).then(() => {
+    this.props.createDocument(this.state).then(() => {
       let newState = merge({}, this.state, {
-        document: { body: "" }
-        this.setState(newState);
-      })
-    })
-    // this.props.createDocument({
-    //   title: "test document",
-    //   body: "Test",
-    //   language: "en"
-    // });
+        title: "",
+        body: "",
+        language: ""
+      });
+      this.setState(newState);
+    });
   }
 
   render() {
     return (
       <div>
         <h1>New Document</h1>
-          <form onSubmit={this.handleSubmit}>
-            <input
-              type="text"
-              placeholder="what do you want to translate?"
-              onChange={this.updateNewDocField()}
-              value={this.state.document.body}
-            />
-            <input type="submit" value="Create New Document" />
-          </form>
+        <form onSubmit={this.handleSubmit}>
+          <input
+            type="text"
+            placeholder="Title"
+            onChange={this.updateField("title")}
+            value={this.state.title}
+          />
+
+          <input
+            type="text"
+            placeholder="What do you want to translate?"
+            onChange={this.updateField("body")}
+            value={this.state.body}
+          />
+
+          <input
+            type="text"
+            placeholder="Lang1 into Lang2"
+            onChange={this.updateField("language")}
+            value={this.state.language}
+          />
+
+          <input type="submit" value="Create New Document" />
+        </form>
       </div>
     );
   }
 }
-//   <textarea
-//     placeholder="what do you want to translate"
-//     onChange={this.updateNewDocField()}
-//     value={this.state.document.body}
-//   />
-// <button onClick={this.handleSubmit}>Create A new document</button>
 
 export default DocumentForm;
