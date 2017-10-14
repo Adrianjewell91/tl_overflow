@@ -2,6 +2,7 @@ import * as SessionUtil from '../util/session_utils';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
+export const CLEAR_SESSION = 'CLEAR_SESSION';
 export const CLEAR_SESSION_ERRORS = 'CLEAR_SESSION_ERRORS';
 
 export const receiveCurrentUser = (currentUser) => ({
@@ -18,6 +19,10 @@ export const receiveCurrentUser = (currentUser) => ({
 //   type: CLEAR_SESSION_ERRORS,
 // });
 
+
+export const clearSession = () => ({
+  type: CLEAR_SESSION
+});
 
 export const signUp = formUser => dispatch => {
   return SessionUtil.createUser(formUser)

@@ -28,7 +28,8 @@ class Splash extends Component {
   handleSignOut(e) {
     e.preventDefault();
     console.log('sign out now');
-    
+    this.setState({username: "", email: "", password: ""})
+    this.props.clearSession();
   }
 
   update(field) {
@@ -40,7 +41,7 @@ class Splash extends Component {
 
   render() {
     const form = this.props.currentUser ?
-      <button onClick={this.signOut}>Your logged in. Sign Out!</button> :
+      <button onClick={this.handleSignOut}>Your logged in. Sign Out!</button> :
         <div>
           <form onSubmit={this.handleSignUp}>
             <label>
