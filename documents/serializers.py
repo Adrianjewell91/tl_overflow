@@ -25,8 +25,4 @@ class DocumentSerializer(serializers.ModelSerializer):
 class TranslationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Translation
-<<<<<<< HEAD
-        fields = ('id','title','body','language')
-=======
         fields = ('id','title','body','language', 'doc_id')
->>>>>>> db24869d1403f1cbc607720416c517e47891a449
