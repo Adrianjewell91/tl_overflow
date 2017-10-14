@@ -40,7 +40,8 @@ export const logIn = formUser => dispatch => {
 export const getCurrentUser = () => dispatch => {
   return SessionUtil.getCurrentUser()
     .then(user => dispatch(receiveCurrentUser({username: user.data.username,
-                                               token: user.data.token})));
+                                               token: user.data.token})))
+    .catch(() => dispatch(clearSession()))
 };
 
 export const logOut = () => dispatch => {

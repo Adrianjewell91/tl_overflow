@@ -12,17 +12,29 @@ from rest_framework.authtoken.models import Token
 
 from django.contrib.auth import login
 
+import datetime
+
 class UserCreate(APIView):
     """
     Creates the user.
     """
     def get(self, request, format='json'):
-        return Response({'username':'Current User here',
-                         'token': 'asdfasdfasdfasdfadf'},
+        import pdb; pdb.set_trace()
+        # Here is where I get the answer to who the current user is.
+        # And it could be nobody.
+        y = datetime.datetime.now()
+        y1 = y.replace(tzinfo=None)
+        potential_user = User.objects.order_by('-last_login').first()
+        x = potential_user.last_login
+        x1 = x.replace(tzinfo=None)
+        if ((y1-x1).total_seconds() < 300):
+            username = potential_user.username
+            return Response({'username': username, 'token':"Put somethine here next"},
                          status=status.HTTP_201_CREATED)
 
+        return Response("No current user", status=status.HTTP_400_BAD_REQUEST)
+
     def post(self, request, format='json'):
-        # import pdb; pdb.set_trace()
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
             new_user = User.objects.create(username=request.data['username'],
