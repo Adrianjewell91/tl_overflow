@@ -28,6 +28,7 @@ class Splash extends Component {
   handleSignOut(e) {
     e.preventDefault();
     console.log('sign out now');
+    
   }
 
   update(field) {
