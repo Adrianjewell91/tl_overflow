@@ -11,3 +11,7 @@ export const fetchUser = (formUser) => {
 export const logOutUser = () => {
   return axios.get('/logout')
 };
+
+export const getCurrentUser = () => {
+  return axios.get('/users/')
+};

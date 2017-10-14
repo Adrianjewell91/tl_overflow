@@ -16,6 +16,11 @@ class UserCreate(APIView):
     """
     Creates the user.
     """
+    def get(self, request, format='json'):
+        return Response({'username':'Current User here',
+                         'token': 'asdfasdfasdfasdfadf'},
+                         status=status.HTTP_201_CREATED)
+
     def post(self, request, format='json'):
         # import pdb; pdb.set_trace()
         serializer = UserSerializer(data=request.data)

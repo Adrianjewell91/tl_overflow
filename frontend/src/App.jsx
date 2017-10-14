@@ -18,7 +18,7 @@ class App extends Component {
           <Route path="/index" component={DocumentsIndexContainer}/>
           <Route path="/new" component={DocumentFormContainer}/>
           <Route path="/documents/:documentId" component={DocumentDetailContainer}/>
-          <Route path="/signup" component={SplashContainer}/>
+          <Route path="/" component={SplashContainer}/>
         </Switch>
       </div>
     );
