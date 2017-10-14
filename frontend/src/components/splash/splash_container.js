@@ -3,8 +3,10 @@ import {signUp, logIn, clearSession} from '../../actions/session_actions';
 import Splash from './splash';
 
 const mapStateToProps = state => {
+  // debugger
   return {
-      currentUser: state.session.currentUser
+      currentUser: state.session.currentUser,
+      errors: state.errors.session
     };
 }
 

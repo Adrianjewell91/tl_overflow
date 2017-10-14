@@ -75,6 +75,11 @@ class Splash extends Component {
       <div>
         <h1>Get better results at Translate OverFlow</h1>
         {form}
+        <ul>
+          {
+            this.props.errors.map((err) => <li key={err}>{err}</li>)
+          }
+        </ul>
       </div>
     );
   }
