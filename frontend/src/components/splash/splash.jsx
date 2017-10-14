@@ -21,7 +21,6 @@ class Splash extends Component {
 
   handleLogIn(e) {
     e.preventDefault();
-    debugger
     this.props.logIn({username: this.state.username,
                       password: this.state.password});
   }
@@ -62,6 +61,10 @@ class Splash extends Component {
 
             <input type="submit" value="Sign Up"></input>
           </form>
+            HOW TO LOGIN:
+              1. Go to www.website.com/login.
+              2. Login.
+              3. Log in here with them same credentials.
             <button onClick={this.handleLogIn}>Log In</button>
         </div>
 
