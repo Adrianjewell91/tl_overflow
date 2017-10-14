@@ -10,6 +10,8 @@ from accounts.serializers import UserSerializer
 from django.contrib.auth.models import User
 from rest_framework.authtoken.models import Token
 
+from django.contrib.auth import login
+
 class UserCreate(APIView):
     """
     Creates the user.
@@ -22,6 +24,7 @@ class UserCreate(APIView):
                 token = Token.objects.create(user=user)
                 json = serializer.data
                 json['token'] = token.key
+                
                 return Response(json, status=status.HTTP_201_CREATED)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

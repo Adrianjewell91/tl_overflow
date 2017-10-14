@@ -7,6 +7,7 @@ class NavBar extends Component {
   }
 
   render() {
+    
     const welcome = this.props.currentUser ?
       <div>
         Hello {this.props.currentUser.username}.

@@ -10,5 +10,5 @@ urlpatterns = [
     # url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^', include('documents.urls')),
     url(r'^users/', include('accounts.urls',namespace='accounts',app_name='accounts')),
-    url(r'^overflow/',views.ReactAppView.as_view()),
+    url(r'^overflow',views.ReactAppView.as_view()),
 ]
