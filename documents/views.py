@@ -46,7 +46,6 @@ class DocumentViewSet(viewsets.ViewSet):
 
 class TranslationViewSet(viewsets.ViewSet):
     serializer_class = TranslationSerializer
-
     def list(self, request, document_pk=None):
         translations = Translation.objects.filter(document=document_pk)
         serializer = TranslationSerializer(translations, many=True)
@@ -58,6 +57,7 @@ class TranslationViewSet(viewsets.ViewSet):
         return Response(serializer.data)
 
     def create(self, request, document_pk=None):
+        # import pdb; pdb.set_trace()
         new = Translation(title=request.data['title'],
                           language=request.data['language'],
                           body=request.data['body'],

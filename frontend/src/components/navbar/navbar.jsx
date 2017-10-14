@@ -6,6 +6,11 @@ class NavBar extends Component {
     super(props);
   }
 
+  handleSignOut(e) {
+    e.preventDefault();
+    this.props.logOut();
+  }
+
   render() {
 
     const welcome = this.props.currentUser ?
