@@ -15,6 +15,7 @@ class Translation(models.Model):
     title = models.CharField(max_length=100, blank=True, default='')
     language = models.CharField(max_length=100, blank=True, default='')
     body = models.TextField()
+    doc_id = models.CharField(max_length=10, blank=True, default='')
     document = models.ForeignKey(Document, related_name='translations', default='')
 
     class Meta:

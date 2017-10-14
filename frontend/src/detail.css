@@ -31,8 +31,8 @@ body {
 
 .translation-list-container a {
   position: absolute;
-  top: 72%;
-  height: 40px;
+  top: 79%;
+  height: 80px;
   width: 14%;
   margin-left: 40px;
   color: transparent;
@@ -45,7 +45,8 @@ body {
   font-size: 16px;
   font-family: sans-serif;
   text-align: center;
-  padding-top: 10px;
+  padding-top: 3
+  0px;
   font-size: 20px;
   font-weight: bolder;
 }

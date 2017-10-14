@@ -24,5 +24,5 @@ class DocumentSerializer(serializers.ModelSerializer):
 
 class TranslationSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Document
-        fields = ('id','title','body','language')
+        model = Translation
+        fields = ('id','title','body','language', 'doc_id')

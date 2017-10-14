@@ -22,13 +22,6 @@ class TranslationsIndex extends React.Component {
     this.setState({text: e.currentTarget.innerHTML})
   }
 
-  toggleDrawer(e) {
-     const el = document.getElementsByClassName("translation-detail-container");
-     if (el[0].classList) {
-      el[0].classList.remove("hidden");
-    }
-  }
-
   update(field) {
     return (e) => {
       this.setState({[field]: e.target.value});
@@ -45,20 +38,24 @@ class TranslationsIndex extends React.Component {
     };
 
     let list2 = [this.props.document].concat(this.props.translations)
+    let randKey = Math.random(10000,1000000);
     return (
       <div className="trans-index-container">
         <div className="carousel-container">
         <Slider {...settings}>
           {
-            list2.map((trans) => {
+            list2.map((trans, idx) => {
+              let link = (<Link to={`/documents/${this.props.document.id}/translations/${trans.id}`}>Edit Me</Link>)
+              if (idx === 0) {
+                link = "";
+              }
               return (
-                <div className="translation-list-container">
+                <div key={trans.id+randKey} className="translation-list-container">
                   <div className="translation-list"
-                       key={trans.id+"tlov"}
                        onClick={this.handleClick}>
                        {trans.title} ({trans.language}): {trans.body}
                   </div>
-                  <Link onClick={this.toggleDrawer} to={`/documents/${this.props.document.id}/translations/${trans.id}`}>Edit Me</Link>
+                  { link }
                 </div>)})
           }
           </Slider>
