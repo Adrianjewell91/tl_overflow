@@ -30,8 +30,13 @@ class TranslationsIndex extends React.Component {
       <Slider {...settings}>
         {
           this.props.translations.map((trans) => {
-            return (<div key={trans.id}>
-                        {trans.title} ({trans.language}): {trans.body}</div>)})
+            return (
+              <div className="translation-list-container">
+                <div className="translation-list" key={trans.id}>
+                          {trans.title} ({trans.language}): {trans.body}</div>
+                        
+                </div>)})
+
         }
         </Slider>
       </div>
