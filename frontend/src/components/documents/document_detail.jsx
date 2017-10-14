@@ -12,15 +12,12 @@ class DocumentDetail extends React.Component {
       .then(res => this.setState(res));
   }
 
+
   render() {
     return (
       <div>
-        <h1>Document Detail</h1>
-        <ul>
-          <li>{this.props.document.title}: {this.props.document.body}</li>
-        </ul>
+        <h1>{this.props.document.title}</h1>
         <TranslationsIndexContainer />
-        <button>Create a Translation</button>
       </div>
     );
   }
