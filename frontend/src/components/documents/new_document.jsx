@@ -8,7 +8,8 @@ class DocumentForm extends React.Component {
     this.state = {
       title: "",
       body: "",
-      language: ""
+      from: "",
+      to: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -25,7 +26,7 @@ class DocumentForm extends React.Component {
     this.props.createDocument(this.state)
 
       .then((resFromCreate) => {
-        axios.post(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20171012T140121Z.b998082e631b287c.a28e1ccdc8860c80b45b5019fccbdb8bba60497a&text=${this.state.body}&lang=${this.state.language}`)
+        axios.post(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20171012T140121Z.b998082e631b287c.a28e1ccdc8860c80b45b5019fccbdb8bba60497a&text=${this.state.body}&lang=${this.state.from}-${this.state.to}`)
             .then((res) => {
               this.props.createTranslation(resFromCreate.a_document.id, {
                 title: `${resFromCreate.a_document.title}_TR`,
@@ -39,7 +40,8 @@ class DocumentForm extends React.Component {
         let newState = merge({}, this.state, {
           title: "",
           body: "",
-          language: ""
+          from: "",
+          to:""
         });
         this.setState(newState);
       });
@@ -58,7 +60,7 @@ class DocumentForm extends React.Component {
           />
           <br />
 
-          <input
+          <textarea
             type="text"
             placeholder="What do you want to translate?"
             onChange={this.updateField("body")}
@@ -66,15 +68,25 @@ class DocumentForm extends React.Component {
           />
           <br />
 
-          <input
-            type="text"
-            placeholder="Lang1 to Lang2"
-            onChange={this.updateField("language")}
-            value={this.state.language}
-          />
+          <select onChange={this.updateField("from")}>
+            <option value="Select Language" disabled="true" selected="true">From</option>
+            <option value="en">en</option>
+            <option value="zh">zh</option>
+            <option value="es">es</option>
+          </select>
+
+          <select onChange={this.updateField("to")}>
+            <option value="Select Language" disabled="true" selected="true">To</option>
+            <option value="en">en</option>
+            <option value="zh">zh</option>
+            <option value="es">es</option>
+          </select>
+          <br />
 
           <input type="submit" value="Create New Document" />
+
         </form>
+
       </div>
     );
   }
