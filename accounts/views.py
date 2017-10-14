@@ -17,16 +17,20 @@ class UserCreate(APIView):
     Creates the user.
     """
     def post(self, request, format='json'):
+        # import pdb; pdb.set_trace()
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
-            user = serializer.save()
-            user.is_superuser = True
-            user.is_staff = True
-            if user:
-                token = Token.objects.create(user=user)
-                json = serializer.data
-                json['token'] = token.key
+            new_user = User.objects.create(username=request.data['username'],
+                                           email=request.data['email'])
+            new_user.set_password(request.data['password'])
+            new_user.is_staff = True
+            new_user.is_superuser = True
+            new_user.save()
 
-                return Response(json, status=status.HTTP_201_CREATED)
+            token = Token.objects.create(user=new_user)
+            json = serializer.data
+            json['token'] = token.key
+
+            return Response(json, status=status.HTTP_201_CREATED)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
