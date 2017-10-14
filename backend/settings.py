@@ -148,4 +148,4 @@ REST_FRAMEWORK = {
 
 CSRF_COOKIE_NAME = "XSRF-TOKEN"
 
-LOGIN_REDIRECT_URL = '/overflow'
+LOGIN_REDIRECT_URL = '/overflow/#/index'

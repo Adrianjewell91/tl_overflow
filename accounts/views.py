@@ -20,11 +20,13 @@ class UserCreate(APIView):
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
             user = serializer.save()
+            user.is_superuser = True
+            user.is_staff = True
             if user:
                 token = Token.objects.create(user=user)
                 json = serializer.data
                 json['token'] = token.key
-                
+
                 return Response(json, status=status.HTTP_201_CREATED)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
