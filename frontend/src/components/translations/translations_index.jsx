@@ -1,9 +1,15 @@
 import React from 'react';
 import Slider from "react-slick";
+import { Link } from 'react-router-dom';
 
 class TranslationsIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      body: "",
+      title: "",
+      language: ""
+    }
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -13,8 +19,20 @@ class TranslationsIndex extends React.Component {
 
   handleClick(e) {
     e.preventDefault();
-    this.props.requestTranslations();
-    console.log(this.props.translations);
+    this.setState({text: e.currentTarget.innerHTML})
+  }
+
+  toggleDrawer(e) {
+     const el = document.getElementsByClassName("translation-detail-container");
+     if (el[0].classList) {
+      el[0].classList.remove("hidden");
+    }
+  }
+
+  update(field) {
+    return (e) => {
+      this.setState({[field]: e.target.value});
+    }
   }
 
   render() {
@@ -25,20 +43,26 @@ class TranslationsIndex extends React.Component {
       slidesToShow: 2,
       slidesToScroll: 1
     };
-    return (
-      <div className="carousel-container">
-      <Slider {...settings}>
-        {
-          this.props.translations.map((trans) => {
-            return (
-              <div className="translation-list-container">
-                <div className="translation-list" key={trans.id}>
-                          {trans.title} ({trans.language}): {trans.body}</div>
-                        
-                </div>)})
 
-        }
-        </Slider>
+    let list2 = [this.props.document].concat(this.props.translations)
+    return (
+      <div className="trans-index-container">
+        <div className="carousel-container">
+        <Slider {...settings}>
+          {
+            list2.map((trans) => {
+              return (
+                <div className="translation-list-container">
+                  <div className="translation-list"
+                       key={trans.id+"tlov"}
+                       onClick={this.handleClick}>
+                       {trans.title} ({trans.language}): {trans.body}
+                  </div>
+                  <Link onClick={this.toggleDrawer} to={`/documents/${this.props.document.id}/translations/${trans.id}`}>Edit Me</Link>
+                </div>)})
+          }
+          </Slider>
+        </div>
       </div>
     );
   }

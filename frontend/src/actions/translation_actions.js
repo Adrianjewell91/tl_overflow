@@ -17,6 +17,10 @@ export const requestTranslations = (doc_id) => (dispatch) => {
   return TranslationsUtil.getTranslations(doc_id)
     .then((translations) => dispatch(receiveTranslations(translations.data)))
 };
+export const requestTranslation = (doc_id, trans_id) => (dispatch) => {
+  return TranslationsUtil.getTranslations(doc_id, trans_id)
+    .then((translations) => dispatch(receiveTranslations(translations.data)))
+};
 
 export const createTranslation = (doc_id, translation) => (dispatch) => {
   return TranslationsUtil.createTranslation(doc_id, translation)

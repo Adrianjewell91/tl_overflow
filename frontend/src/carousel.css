@@ -5649,6 +5649,7 @@ blockquote p {
   height: 200px;
   border: 1px solid blueviolet;
   padding: 10px;
+  overflow: scroll;
 }
 
 /* Dots */
