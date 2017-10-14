@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {signUp, logIn} from '../../actions/session_actions';
+import {signUp, logIn, logOut} from '../../actions/session_actions';
 import NavBar from './navbar';
 
 const mapStateToProps = state => {
@@ -11,7 +11,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     signUp: (formUser) => dispatch(signUp(formUser)),
-    logIn: (formUser) => dispatch(logIn(formUser))
+    logIn: (formUser) => dispatch(logIn(formUser)),
+    logOut: () => dispatch(logOut())
   };
 }
 

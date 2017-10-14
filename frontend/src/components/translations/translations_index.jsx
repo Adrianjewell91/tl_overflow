@@ -1,4 +1,5 @@
 import React from 'react';
+import Slider from "react-slick";
 
 class TranslationsIndex extends React.Component {
   constructor(props) {
@@ -17,13 +18,27 @@ class TranslationsIndex extends React.Component {
   }
 
   render() {
+    let settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 2,
+      slidesToScroll: 1
+    };
     return (
-      <div>
+      <div className="carousel-container">
+      <Slider {...settings}>
         {
           this.props.translations.map((trans) => {
-            return (<li key={trans.id}>
-                        {trans.title} ({trans.language}): {trans.body}</li>)})
+            return (
+              <div className="translation-list-container">
+                <div className="translation-list" key={trans.id}>
+                          {trans.title} ({trans.language}): {trans.body}</div>
+                        
+                </div>)})
+
         }
+        </Slider>
       </div>
     );
   }

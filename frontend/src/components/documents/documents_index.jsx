@@ -22,6 +22,7 @@ class DocumentsIndex extends React.Component {
     return (
       <div>
         <h1>Documents</h1>
+        <button><Link to={'/new'}>New Document</Link></button>
         <ul>
         {
           this.props.documents.map((doc) => {

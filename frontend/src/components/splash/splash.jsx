@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 
 class Splash extends Component {
   constructor(props) {
@@ -15,31 +16,34 @@ class Splash extends Component {
 
   handleSignUp(e) {
     e.preventDefault();
-    this.props.signUp(this.state);
+    this.props.signUp(this.state)
   }
 
   handleLogIn(e) {
     e.preventDefault();
-    console.log(this.state);
+    debugger
     this.props.logIn({username: this.state.username,
                       password: this.state.password});
   }
 
   handleSignOut(e) {
     e.preventDefault();
-    console.log('sign out now');
+    this.setState({username: "", email: "", password: ""})
+    this.props.logOut();
   }
 
   update(field) {
     return (e) => { //no periods allowed for some reason.
-      console.log(this.state);
       this.setState({[field]: e.target.value});
     }
   }
 
   render() {
     const form = this.props.currentUser ?
-      <button onClick={this.signOut}>Your logged in. Sign Out!</button> :
+      <div>
+        <button onClick={this.handleSignOut}>You're logged in. Sign Out!</button>
+        <Link to={"/index"}> See Recent Translations</Link>
+      </div> :
         <div>
           <form onSubmit={this.handleSignUp}>
             <label>
@@ -47,13 +51,6 @@ class Splash extends Component {
                      onChange={this.update('username')}
                      placeholder="Username"
                      value={this.state.username}></input>
-            </label>
-
-            <label>
-              <input type="text"
-                     onChange={this.update('email')}
-                     placeholder="Email (Sign up only)"
-                     value={this.state.email}></input>
             </label>
 
             <label>
@@ -73,6 +70,11 @@ class Splash extends Component {
       <div>
         <h1>Get better results at Translate OverFlow</h1>
         {form}
+        <ul>
+          {
+            this.props.errors.map((err) => <li key={err}>{err}</li>)
+          }
+        </ul>
       </div>
     );
   }

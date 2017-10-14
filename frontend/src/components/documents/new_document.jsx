@@ -25,6 +25,7 @@ class DocumentForm extends React.Component {
     e.preventDefault();
     this.props
       .createDocument(this.state)
+
       .then(resFromCreate => {
         axios
           .post(
@@ -42,6 +43,7 @@ class DocumentForm extends React.Component {
             this.props.history.push(`/documents/${resFromCreate.a_document.id}`);
           });
       })
+
       .then(() => {
         let newState = merge({}, this.state, {
           title: "",
