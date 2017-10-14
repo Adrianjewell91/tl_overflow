@@ -5,7 +5,6 @@ from rest_framework import routers
 
 from documents import views
 
-
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 
@@ -17,3 +16,5 @@ urlpatterns = [
     url(r'^login/', auth_views.login, {'template_name': 'admin/login-custom.html'}, name='login'),
     url(r'^',views.ReactAppView.as_view()),
 ]
+
+# /Users/adrian/repos/flex_project/tl_overflow/env/lib/python3.6/site-packages/rest_framework/templates/admin

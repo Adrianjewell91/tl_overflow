@@ -20,14 +20,13 @@ class UserCreate(APIView):
     """
     def get(self, request, format='json'):
         import pdb; pdb.set_trace()
-        # Here is where I get the answer to who the current user is.
-        # And it could be nobody.
+
         y = datetime.datetime.now()
         y1 = y.replace(tzinfo=None)
         potential_user = User.objects.order_by('-last_login').first()
         x = potential_user.last_login
         x1 = x.replace(tzinfo=None)
-        if ((y1-x1).total_seconds() < 300):
+        if ((y1-x1).total_seconds() < 30):
             login(request, potential_user)
             username = potential_user.username
             return Response({'username': username, 'token':"Put somethine here next"},
@@ -36,10 +35,10 @@ class UserCreate(APIView):
         return Response("No current user", status=status.HTTP_400_BAD_REQUEST)
 
     def post(self, request, format='json'):
+        import pdb; pdb.set_trace()
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
-            new_user = User.objects.create(username=request.data['username'],
-                                           email=request.data['email'])
+            new_user = User.objects.create(username=request.data['username'])
             new_user.set_password(request.data['password'])
             # new_user.is_staff = True
             new_user.is_superuser = True
