@@ -5,7 +5,7 @@ import DocumentFormContainer from './components/documents/new_document_container
 import SplashContainer from './components/splash/splash_container';
 import DocumentDetailContainer from './components/documents/document_detail_container';
 import NavBar from './components/navbar/navbar_container';
-
+import {ProtectedRoute} from './util/route_util.jsx';
 
 class App extends Component {
   render() {
@@ -14,7 +14,7 @@ class App extends Component {
         <NavBar/>
         <Switch>
           <Route path="/index" component={DocumentsIndexContainer}/>
-          <Route path="/new" component={DocumentFormContainer}/>
+          <ProtectedRoute path="/new" component={DocumentFormContainer}/>
           <Route path="/documents/:documentId" component={DocumentDetailContainer}/>
           <Route path="/" component={SplashContainer}/>
         </Switch>

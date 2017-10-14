@@ -9,7 +9,7 @@ const mapStateToProps = state => {
 const Protected = ({component: Component, path, loggedIn}) => (
   <Route path={path} render={(props) => (
       !loggedIn ? (
-        <Redirect to="/" />
+        <Redirect to="/index" />
       ) : (
         <Component {...props} />
       )
