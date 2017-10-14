@@ -25,6 +25,7 @@ class Splash extends Component {
                       password: this.state.password});
   }
 
+
   handleSignOut(e) {
     e.preventDefault();
     this.setState({username: "", email: "", password: ""})
@@ -61,11 +62,11 @@ class Splash extends Component {
 
             <input type="submit" value="Sign Up"></input>
           </form>
-            HOW TO LOGIN:
-              1. Go to www.website.com/login.
-              2. Login.
-              3. Log in here with them same credentials.
             <button onClick={this.handleLogIn}>Log In</button>
+
+            <button>
+              <a href="https://pure-crag-76247.herokuapp.com/login/">
+                      HEROKU LOGIN</a></button>
         </div>
 
 

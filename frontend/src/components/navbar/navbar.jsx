@@ -28,6 +28,7 @@ class NavBar extends Component {
     return (
       <div>
         {welcome}
+        <button><Link to={'/index'}>All Documents</Link></button>
       </div>
     );
   }
