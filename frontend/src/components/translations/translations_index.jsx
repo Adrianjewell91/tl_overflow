@@ -26,14 +26,15 @@ class TranslationsIndex extends React.Component {
       slidesToScroll: 1
     };
     return (
+      <div className="carousel-container">
       <Slider {...settings}>
         {
           this.props.translations.map((trans) => {
             return (<div key={trans.id}>
                         {trans.title} ({trans.language}): {trans.body}</div>)})
         }
-      </Slider>
-
+        </Slider>
+      </div>
     );
   }
 }
