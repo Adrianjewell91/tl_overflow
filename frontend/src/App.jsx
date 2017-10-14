@@ -14,7 +14,7 @@ class App extends Component {
         <NavBar/>
         <Switch>
           <Route path="/index" component={DocumentsIndexContainer}/>
-          <ProtectedRoute path="/new" component={DocumentFormContainer}/>
+          <Route path="/new" component={DocumentFormContainer}/>
           <Route path="/documents/:documentId" component={DocumentDetailContainer}/>
           <Route path="/" component={SplashContainer}/>
         </Switch>

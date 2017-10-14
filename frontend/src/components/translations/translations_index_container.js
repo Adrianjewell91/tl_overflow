@@ -4,7 +4,6 @@ import { requestTranslations,
          createTranslation } from "../../actions/translation_actions";
 import TranslationsIndex from './translations_index';
 
-
 const mapStateToProps = (state, ownProps) => {
   return {
     translations: Object.values(state.entities.translations),
