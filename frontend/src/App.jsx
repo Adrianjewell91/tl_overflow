@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Route, Switch} from 'react-router-dom';
-import DocumentsIndexContainer from './components/documents/documents_container';
+import DocumentsIndexContainer from './components/documents/documents_index_container';
 import DocumentFormContainer from './components/documents/new_document_container';
 import SplashContainer from './components/splash/splash_container';
 import DocumentDetailContainer from './components/documents/document_detail_container';

@@ -11,7 +11,7 @@ const TranslationsReducer = (state = {}, action) => {
       action.translations.forEach((el) => new_state[el.id] = el);
       return new_state;
     case RECEIVE_TRANSLATION:
-      return {[action.a_translation.id]: action.a_translation};
+      return {[action.translation.id]: action.translation};
     case RECEIVE_DOCUMENTS:
       return {};
     default:

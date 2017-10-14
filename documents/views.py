@@ -57,6 +57,17 @@ class TranslationViewSet(viewsets.ViewSet):
         serializer = TranslationSerializer(translation)
         return Response(serializer.data)
 
+    def create(self, request, document_pk=None):
+        # import pdb; pdb.set_trace()
+        new = Translation(title=request.data['title'],
+                          language=request.data['language'],
+                          body=request.data['body'],
+                          document=Document.objects.get(pk=document_pk))
+        new.save()
+        serializer = TranslationSerializer(new)
+        return Response(serializer.data, status=201)
+
+
 # !!before using drf-nested-routers!!
 # class DocumentViewSet(viewsets.ModelViewSet):
 #     """
