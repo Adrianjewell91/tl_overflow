@@ -23,7 +23,7 @@ class UserCreate(APIView):
             new_user = User.objects.create(username=request.data['username'],
                                            email=request.data['email'])
             new_user.set_password(request.data['password'])
-            new_user.is_staff = True
+            # new_user.is_staff = True
             new_user.is_superuser = True
             new_user.save()
 

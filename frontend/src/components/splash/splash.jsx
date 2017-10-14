@@ -4,7 +4,7 @@ class Splash extends Component {
   constructor(props) {
     super(props);
     this.handleSignUp = this.handleSignUp.bind(this);
-    this.handleLogIn = this.handleLogIn.bind(this);
+    // this.handleLogIn = this.handleLogIn.bind(this);
     this.handleSignOut = this.handleSignOut.bind(this);
     this.state = {username: "", email: "", password: ""};
   }
@@ -15,33 +15,32 @@ class Splash extends Component {
 
   handleSignUp(e) {
     e.preventDefault();
-    this.props.signUp(this.state);
+    this.props.signUp(this.state)
+              .then(() => this.props.history.push("/index"));
   }
-
-  handleLogIn(e) {
-    e.preventDefault();
-    console.log(this.state);
-    this.props.logIn({username: this.state.username,
-                      password: this.state.password});
-  }
+  //
+  // handleLogIn(e) {
+  //   e.preventDefault();
+  //   console.log(this.state);
+  //   this.props.logIn({username: this.state.username,
+  //                     password: this.state.password});
+  // }
 
   handleSignOut(e) {
     e.preventDefault();
-    console.log('sign out now');
     this.setState({username: "", email: "", password: ""})
     this.props.logOut();
   }
 
   update(field) {
     return (e) => { //no periods allowed for some reason.
-      console.log(this.state);
       this.setState({[field]: e.target.value});
     }
   }
 
   render() {
     const form = this.props.currentUser ?
-      <button onClick={this.handleSignOut}>Your logged in. Sign Out!</button> :
+      <button onClick={this.handleSignOut}>You're logged in. Sign Out!</button> :
         <div>
           <form onSubmit={this.handleSignUp}>
             <label>
@@ -67,7 +66,6 @@ class Splash extends Component {
 
             <input type="submit" value="Sign Up"></input>
           </form>
-            <button onClick={this.handleLogIn}>Log In</button>
         </div>
 
 
