@@ -67,6 +67,8 @@ class DocumentForm extends React.Component {
           <br />
 
           <textarea
+            rows="10"
+            cols="100"
             type="text"
             placeholder="What do you want to translate?"
             onChange={this.updateField("body")}
