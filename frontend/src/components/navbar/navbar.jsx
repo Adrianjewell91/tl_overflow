@@ -7,9 +7,17 @@ class NavBar extends Component {
   }
 
   render() {
+    const welcome = this.props.currentUser ?
+      <div>
+        Hello {this.props.currentUser.username}.
+      </div> :
+      <div>
+        Hello there. Please Login to submit a translation!
+      </div>
+
     return (
       <div>
-        This is the navbar.
+        {welcome}
       </div>
     );
   }
