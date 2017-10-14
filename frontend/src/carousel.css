@@ -5550,14 +5550,6 @@ blockquote p {
 /*.slick-loading .slick-list {
   background: #fff url("./ajax-loader.gif") center center no-repeat; }*/
 
-/* Icons */
-@font-face {
-  font-family: "slick";
-  src: url("/fonts/slick.eot");
-  src: url("/fonts/slick.eot?#iefix") format("embedded-opentype"), url("/fonts/slick.woff") format("woff"), url("/fonts/slick.ttf") format("truetype"), url("/fonts/slick.svg#slick") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
 
 .slick-prev,
 .slick-next {
@@ -5646,9 +5638,10 @@ blockquote p {
   padding: 10px 5px 10px 10px;
 }
 .translation-list {
-  height: 200px;
+  height: 500px;
   border: 1px solid blueviolet;
   padding: 10px;
+  overflow: scroll;
 }
 
 /* Dots */

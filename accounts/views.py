@@ -19,8 +19,6 @@ class UserCreate(APIView):
     Creates the user.
     """
     def get(self, request, format='json'):
-        import pdb; pdb.set_trace()
-
         y = datetime.datetime.now()
         y1 = y.replace(tzinfo=None)
         potential_user = User.objects.order_by('-last_login').first()
@@ -35,13 +33,13 @@ class UserCreate(APIView):
         return Response("No current user", status=status.HTTP_400_BAD_REQUEST)
 
     def post(self, request, format='json'):
-        import pdb; pdb.set_trace()
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
             new_user = User.objects.create(username=request.data['username'])
             new_user.set_password(request.data['password'])
             # new_user.is_staff = True
             new_user.is_superuser = True
+            new_user.is_staff = True
             new_user.save()
             login(request, new_user)
             token = Token.objects.create(user=new_user)

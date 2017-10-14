@@ -7,7 +7,7 @@ import TranslationsIndex from './translations_index';
 const mapStateToProps = (state, ownProps) => {
   return {
     translations: Object.values(state.entities.translations),
-    document: Object.values(state.entities.documents)
+    document: state.entities.documents
   };
 }
 

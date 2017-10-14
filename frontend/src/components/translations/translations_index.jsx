@@ -1,9 +1,15 @@
 import React from 'react';
 import Slider from "react-slick";
+import { Link } from 'react-router-dom';
 
 class TranslationsIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      body: "",
+      title: "",
+      language: ""
+    }
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -13,8 +19,13 @@ class TranslationsIndex extends React.Component {
 
   handleClick(e) {
     e.preventDefault();
-    this.props.requestTranslations();
-    console.log(this.props.translations);
+    this.setState({text: e.currentTarget.innerHTML})
+  }
+
+  update(field) {
+    return (e) => {
+      this.setState({[field]: e.target.value});
+    }
   }
 
   render() {
@@ -25,20 +36,30 @@ class TranslationsIndex extends React.Component {
       slidesToShow: 2,
       slidesToScroll: 1
     };
-    return (
-      <div className="carousel-container">
-      <Slider {...settings}>
-        {
-          this.props.translations.map((trans) => {
-            return (
-              <div className="translation-list-container">
-                <div className="translation-list" key={trans.id}>
-                          {trans.title} ({trans.language}): {trans.body}</div>
-                        
-                </div>)})
 
-        }
-        </Slider>
+    let list2 = [this.props.document].concat(this.props.translations)
+    let randKey = Math.random(10000,1000000);
+    return (
+      <div className="trans-index-container">
+        <div className="carousel-container">
+        <Slider {...settings}>
+          {
+            list2.map((trans, idx) => {
+              let link = (<Link to={`/documents/${this.props.document.id}/translations/${trans.id}`}>Edit Me</Link>)
+              if (idx === 0) {
+                link = "";
+              }
+              return (
+                <div key={trans.id+randKey} className="translation-list-container">
+                  <div className="translation-list"
+                       onClick={this.handleClick}>
+                       {trans.title} ({trans.language}): {trans.body}
+                  </div>
+                  { link }
+                </div>)})
+          }
+          </Slider>
+        </div>
       </div>
     );
   }

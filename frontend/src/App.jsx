@@ -4,6 +4,7 @@ import DocumentsIndexContainer from './components/documents/documents_index_cont
 import DocumentFormContainer from './components/documents/new_document_container';
 import SplashContainer from './components/splash/splash_container';
 import DocumentDetailContainer from './components/documents/document_detail_container';
+import TranslationNewContainer from "./components/translations/translation_new_container";
 import NavBar from './components/navbar/navbar_container';
 // import {ProtectedRoute} from './util/route_util.jsx';s
 import "./carousel.css";
@@ -17,6 +18,7 @@ class App extends Component {
         <Switch>
           <Route path="/index" component={DocumentsIndexContainer}/>
           <Route path="/new" component={DocumentFormContainer}/>
+          <Route exact path="/documents/:documentId/translations/:translationId" component={TranslationNewContainer}/>
           <Route path="/documents/:documentId" component={DocumentDetailContainer}/>
           <Route path="/" component={SplashContainer}/>
         </Switch>

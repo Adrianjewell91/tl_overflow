@@ -61,6 +61,7 @@ class TranslationViewSet(viewsets.ViewSet):
         new = Translation(title=request.data['title'],
                           language=request.data['language'],
                           body=request.data['body'],
+                          doc_id=document_pk,
                           document=Document.objects.get(pk=document_pk))
         new.save()
         serializer = TranslationSerializer(new)
