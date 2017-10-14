@@ -1,6 +1,6 @@
 venv
 *.pyc
-staticfiles
+staticfiles/
 .env
 
 node_modules/
