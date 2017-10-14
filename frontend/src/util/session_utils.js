@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+axios.defaults.xsrfHeaderName = "X-CSRFToken";
+
 export const createUser = (formUser) => {
   return axios.post('/users/', formUser)
 };

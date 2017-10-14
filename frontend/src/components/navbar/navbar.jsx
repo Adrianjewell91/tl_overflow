@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 
 class NavBar extends Component {
   // eslint-disable-next-line
   constructor(props) {
     super(props);
+    this.handleSignOut = this.handleSignOut.bind(this)
   }
 
   handleSignOut(e) {
@@ -19,7 +22,7 @@ class NavBar extends Component {
         <button onClick={this.handleSignOut}>Sign Out!</button>
       </div> :
       <div>
-        Hello there. Please Login to submit a translation!
+        Hello there. Please <Link to={"/"}>Login</Link> to submit a translation!
       </div>
 
     return (

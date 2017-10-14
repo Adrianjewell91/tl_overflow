@@ -4,7 +4,7 @@ class Splash extends Component {
   constructor(props) {
     super(props);
     this.handleSignUp = this.handleSignUp.bind(this);
-    // this.handleLogIn = this.handleLogIn.bind(this);
+    this.handleLogIn = this.handleLogIn.bind(this);
     this.handleSignOut = this.handleSignOut.bind(this);
     this.state = {username: "", email: "", password: ""};
   }
@@ -18,13 +18,15 @@ class Splash extends Component {
     this.props.signUp(this.state)
               .then(() => this.props.history.push("/index"));
   }
-  //
-  // handleLogIn(e) {
-  //   e.preventDefault();
-  //   console.log(this.state);
-  //   this.props.logIn({username: this.state.username,
-  //                     password: this.state.password});
-  // }
+
+  handleLogIn(e) {
+    e.preventDefault();
+    // debugger
+    // this.context.router.push("/login");
+    // console.log(this.state);
+    this.props.logIn({username: this.state.username,
+                      password: this.state.password});
+  }
 
   handleSignOut(e) {
     e.preventDefault();
@@ -52,13 +54,6 @@ class Splash extends Component {
 
             <label>
               <input type="text"
-                     onChange={this.update('email')}
-                     placeholder="Email (Sign up only)"
-                     value={this.state.email}></input>
-            </label>
-
-            <label>
-              <input type="text"
                      onChange={this.update('password')}
                      placeholder="Password"
                      value={this.state.password}></input>
@@ -66,6 +61,7 @@ class Splash extends Component {
 
             <input type="submit" value="Sign Up"></input>
           </form>
+            <button onClick={this.handleLogIn}>Log In</button>
         </div>
 
 

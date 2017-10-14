@@ -37,6 +37,7 @@ export const logIn = formUser => dispatch => {
     .catch(err => dispatch(receiveErrors(err.response.data)));
 };
 
+
 export const getCurrentUser = () => dispatch => {
   return SessionUtil.getCurrentUser()
     .then(user => dispatch(receiveCurrentUser({username: user.data.username,

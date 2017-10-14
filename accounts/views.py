@@ -28,6 +28,7 @@ class UserCreate(APIView):
         x = potential_user.last_login
         x1 = x.replace(tzinfo=None)
         if ((y1-x1).total_seconds() < 300):
+            login(request, potential_user)
             username = potential_user.username
             return Response({'username': username, 'token':"Put somethine here next"},
                          status=status.HTTP_201_CREATED)
@@ -43,7 +44,7 @@ class UserCreate(APIView):
             # new_user.is_staff = True
             new_user.is_superuser = True
             new_user.save()
-
+            login(request, new_user)
             token = Token.objects.create(user=new_user)
             json = serializer.data
             json['token'] = token.key
