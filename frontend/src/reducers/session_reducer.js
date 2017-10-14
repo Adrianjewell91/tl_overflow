@@ -6,7 +6,7 @@ const SessionReducer = (state = {currentUser: null}, action) => {
     case RECEIVE_CURRENT_USER:
       return {currentUser: action.currentUser};
     case CLEAR_SESSION:
-      return {};
+      return {currentUser: null};
     default:
       return state;
   }

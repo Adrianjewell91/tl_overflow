@@ -37,6 +37,6 @@ export const logIn = formUser => dispatch => {
     .catch(err => dispatch(receiveErrors(err.response.data)));
 };
 
-// export const logout = () => dispatch => {
-//   return SessionUtil.destroySession().then(() => dispatch(receiveCurrentUser(null)));
-// };
+export const logOut = () => dispatch => {
+  return SessionUtil.logOutUser().then(() => dispatch(receiveCurrentUser(null)));
+};

@@ -7,3 +7,7 @@ export const createUser = (formUser) => {
 export const fetchUser = (formUser) => {
   return axios.post('/users/auth',formUser)
 };
+
+export const logOutUser = () => {
+  return axios.get('/logout')
+};

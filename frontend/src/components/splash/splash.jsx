@@ -29,7 +29,7 @@ class Splash extends Component {
     e.preventDefault();
     console.log('sign out now');
     this.setState({username: "", email: "", password: ""})
-    this.props.clearSession();
+    this.props.logOut();
   }
 
   update(field) {
