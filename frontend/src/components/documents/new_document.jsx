@@ -39,11 +39,8 @@ class DocumentForm extends React.Component {
             this.props.createTranslation(resFromCreate.a_document.id, {
               title: `${resFromCreate.a_document.title}_TR`,
               body: `${res.data.text[0]}`,
-<<<<<<< HEAD
               owner: resFromCreate.a_document.owner,
-=======
-              owner: `${resFromCreate.a_document.owner}`,
->>>>>>> 3e439e89f3f0fb9f1d40a14971eadc6fb09dfb66
+
               language: `${resFromCreate.a_document.language}`
             });
           })
