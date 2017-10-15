@@ -5,6 +5,7 @@
   border: 1px solid #D1C4E9;
   margin: 1%;
   align-items: center;
+  justify-content: center;
 }
 
 .index-title {
@@ -20,4 +21,12 @@
 
 .index-item-stats {
   text-align: left;
+}
+
+
+.index-item-stats-container {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  width: 99%;
 }

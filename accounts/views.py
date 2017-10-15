@@ -24,7 +24,7 @@ class UserCreate(APIView):
         potential_user = User.objects.order_by('-last_login').first()
         x = potential_user.last_login
         x1 = x.replace(tzinfo=None)
-        if ((y1-x1).total_seconds() < 30):
+        if ((y1-x1).total_seconds() < 60):
             login(request, potential_user)
             username = potential_user.username
             return Response({'username': username, 'token':"Put somethine here next"},
