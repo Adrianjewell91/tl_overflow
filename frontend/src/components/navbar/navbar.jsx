@@ -8,6 +8,7 @@ class NavBar extends Component {
   constructor(props) {
     super(props);
     this.handleSignOut = this.handleSignOut.bind(this)
+    this.handleReturnToIndex = this.handleReturnToIndex.bind(this)
   }
 
   handleSignOut(e) {
@@ -15,14 +16,23 @@ class NavBar extends Component {
     this.props.logOut();
   }
 
+  handleReturnToIndex (e) {
+    e.preventDefault();
+    this.props.requestDocuments()
+              .then(() => this.props.history.push('/index'));
+    if (document.getElementById('filter-button')) {
+      document.getElementById('filter-button').textContent = "See My Documents";
+    }
+  }
+
   render() {
 
     const welcome = this.props.currentUser ?
       <div className="status-info-inner-container">
-        Hello {this.props.currentUser.username}.
         <button onClick={this.handleSignOut}>Sign Out!</button>
       </div> :
       <div className="status-info-inner-container">
+        <p>Please Sign In</p>
         <Link to={"/"}>Login</Link>
       </div>
 
@@ -40,7 +50,7 @@ class NavBar extends Component {
             </div>
           </div>
           <div className="all-documents-btn-container">
-            <button><Link to={'/index'}>All Documents</Link></button>
+            <button onClick={this.handleReturnToIndex}>All Documents</button>
           </div>
           <div className="status-info-container">
             {welcome}

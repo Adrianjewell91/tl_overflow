@@ -21,6 +21,12 @@ class DocumentViewSet(viewsets.ViewSet):
     serializer_class = DocumentSerializer
 
     def list(self, request,):
+        # import pdb; pdb.set_trace()
+        if request.query_params.get('owner',False) != False:
+            document = Document.objects.filter(owner=request.query_params.get('owner',False))
+            serializer = DocumentSerializer(document, many=True)
+            return Response(serializer.data)
+
         document = Document.objects.filter()
         serializer = DocumentSerializer(document, many=True)
         return Response(serializer.data)
@@ -34,6 +40,7 @@ class DocumentViewSet(viewsets.ViewSet):
         return Response(serializer.errors, status=400)
 
     def retrieve(self, request, pk=None):
+
         document = Document.objects.get(pk=pk)
         serializer = DocumentSerializer(document)
         return Response(serializer.data)

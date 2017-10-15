@@ -1,14 +1,23 @@
 .document-index {
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin-top: 80px;
 }
 
+.scrollable-index-items {
+}
+
 .index-list {
+  height: 70%;
+  overflow-y: scroll;
   list-style: none;
   list-style-type: none;
   text-align: center;
   margin: 0;
+  position: fixed;
+  top: 152px;
+  width: 80%;
 }
 
 .index-dashboard-container {
@@ -17,9 +26,51 @@
 }
 
 .index-dashboard {
+  position: fixed;
+  background: #673AB7;
   display:flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 95%;
+  width: 80%;
+}
+
+.index-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.index-buttons * {
+  margin: 5px;
+
+}
+
+.filter-button, .new-doc-button {
+  background-color: #03A9F4;
+  color: white;
+  border: none;
+  margin-top: 0.5%;
+}
+
+.filter-button:focus, .new-doc-button:focus {
+  outline: none;
+}
+
+.filter-button:hover, .new-doc-button:hover {
+  outline: none;
+  color: #D1C4E9
+}
+
+.new-doc-button * {
+  color:white;
+}
+
+.new-doc-button *:hover {
+  color:white;
+  color: #D1C4E9
+}
+
+.index-dashboard-title {
+  color:white;
 }
