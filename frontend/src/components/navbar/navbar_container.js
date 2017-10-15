@@ -1,5 +1,6 @@
 import {connect} from 'react-redux';
 import {signUp, logIn, logOut} from '../../actions/session_actions';
+import {requestDocuments} from "../../actions/documents_actions";
 import NavBar from './navbar';
 
 const mapStateToProps = state => {
@@ -12,7 +13,8 @@ const mapDispatchToProps = dispatch => {
   return {
     signUp: (formUser) => dispatch(signUp(formUser)),
     logIn: (formUser) => dispatch(logIn(formUser)),
-    logOut: () => dispatch(logOut())
+    logOut: () => dispatch(logOut()),
+    requestDocuments: () => dispatch(requestDocuments()),
   };
 }
 

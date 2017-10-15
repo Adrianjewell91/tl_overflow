@@ -15,32 +15,38 @@ class DocumentsIndex extends React.Component {
     this.props.requestDocuments();
   }
 
-  // componentWillReceiveProps(newProps) {
-  //   if (this.props.documents.length !== newProps.documents.length) {
-  //     this.props.requestDocuments();
-  //   }
-  // }
-
 
   handleClick(e) {
     e.preventDefault();
-    this.props.requestDocuments();
   }
 
   handleFilter(e) {
     e.preventDefault();
-    this.props.requestOwnerDocuments(this.props.currentUser.username)
+    const showAll = "Return To All Documents";
+    const showYours = "See My Documents";
+
+    if (e.currentTarget.textContent === showYours) {
+      this.props.requestOwnerDocuments(this.props.currentUser.username)
+      e.currentTarget.textContent = showAll;
+    } else {
+      e.currentTarget.textContent = showYours;
+      this.props.requestDocuments();
+    }
   }
 
-//I want to show them on the page.
+
   render() {
+    let showFilter;
+    if (this.props.currentUser) {
+      showFilter = <button id="filter-button" onClick={this.handleFilter}>See My Documents</button>;
+    }
+
     return (
       <div className="document-index">
-
         <div className="index-dashboard-container">
           <div className="index-dashboard">
             <h1 className="index-title">Documents</h1>
-  
+            {showFilter}
             <button><Link to={'/new'}>New Document</Link></button>
           </div>
         </div>
