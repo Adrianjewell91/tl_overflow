@@ -108,7 +108,7 @@ body {
   padding: 5px;
   text-align: justify;
 }
-.document-detail-header h1 {
+.document-detail-header h1, .translation-detail-header h1 {
   background: #512DA8;
   color: white;
   text-align: center;
