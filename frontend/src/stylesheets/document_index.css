@@ -4,11 +4,19 @@
     margin-top: 80px;
 }
 
+.scrollable-index-items {
+  height: 500px;
+  overflow-y: scroll;
+  display: flex;
+  justify-content: center;
+}
+
 .index-list {
   list-style: none;
   list-style-type: none;
   text-align: center;
   margin: 0;
+  width: 80%;
 }
 
 .index-dashboard-container {
@@ -18,8 +26,41 @@
 
 .index-dashboard {
   display:flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 95%;
+  width: 98%;
+}
+
+
+.index-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.filter-button, .new-doc-button {
+  background-color: #03A9F4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 0.5%;
+}
+
+.filter-button:focus, .new-doc-button:focus {
+  outline: none;
+}
+
+.filter-button:hover, .new-doc-button:hover {
+  outline: none;
+  color: #D1C4E9
+}
+
+.new-doc-button * {
+  color:white;
+}
+
+.new-doc-button *:hover {
+  color:white;
+  color: #D1C4E9
 }

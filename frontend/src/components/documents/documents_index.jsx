@@ -38,7 +38,9 @@ class DocumentsIndex extends React.Component {
   render() {
     let showFilter;
     if (this.props.currentUser) {
-      showFilter = <button id="filter-button" onClick={this.handleFilter}>See My Documents</button>;
+      showFilter = <button id="filter-button"
+                           className="filter-button"
+                           onClick={this.handleFilter}>See My Documents</button>;
     }
 
     return (
@@ -46,18 +48,23 @@ class DocumentsIndex extends React.Component {
         <div className="index-dashboard-container">
           <div className="index-dashboard">
             <h1 className="index-title">Documents</h1>
-            {showFilter}
-            <button><Link to={'/new'}>New Document</Link></button>
+            <div className="index-buttons">
+              {showFilter}
+              <button className="new-doc-button">
+                <Link to={'/new'}>New Document</Link></button>
+              </div>
           </div>
         </div>
 
-        <ul className="index-list">
-        {
-          this.props.documents.map((doc) => {
-            return (<IndexItem key={doc.id} doc={doc}/>)
-          })
-        }
-        </ul>
+        <div className="scrollable-index-items">
+          <ul className="index-list">
+          {
+            this.props.documents.map((doc) => {
+              return (<IndexItem key={doc.id} doc={doc}/>)
+            })
+          }
+          </ul>
+        </div>
 
       </div>
     );
