@@ -6,10 +6,12 @@ import SplashContainer from './components/splash/splash_container';
 import DocumentDetailContainer from './components/documents/document_detail_container';
 import TranslationNewContainer from "./components/translations/translation_new_container";
 import NavBar from './components/navbar/navbar_container';
-import "./carousel.css";
-import "./detail.css";
+// import {ProtectedRoute} from './util/route_util.jsx';s
+import "./stylesheets/carousel.css";
+import "./stylesheets/detail.css";
 
 class App extends Component {
+
   render() {
     return (
       <div className="App">

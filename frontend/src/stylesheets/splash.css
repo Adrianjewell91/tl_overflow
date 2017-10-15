@@ -1,0 +1,14 @@
+.splash {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+}
+.splash-content {
+  width: 80%;
+  display: flex;
+}
+
+.splash-logged-in {
+  display: flex;
+  flex-direction: column;
+}

@@ -23,6 +23,7 @@ class TranslationNew extends React.Component {
     e.preventDefault();
     const doc_id = this.props.match.params.documentId;
     delete this.state["id"];
+    // eslint-disable-next-line
     this.state.doc_id = doc_id;
     console.log(doc_id);
     console.log(this.state);
