@@ -7,7 +7,6 @@ class TranslationNew extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-
   update(field) {
     return (e) => {
       this.setState({[field]: e.target.value});

@@ -5,7 +5,8 @@ import { createTranslation } from "../../actions/translation_actions";
 
 const mapStateToProps = state => {
   return {
-    documents: Object.values(state.entities.documents)
+    documents: Object.values(state.entities.documents),
+    currentUser: state.session.currentUser
   };
 };
 

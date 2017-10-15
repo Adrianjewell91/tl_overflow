@@ -6,6 +6,7 @@ class DocumentForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      owner: this.props.currentUser.username,
       title: "",
       body: "",
       from: "",
@@ -26,6 +27,7 @@ class DocumentForm extends React.Component {
     this.props
       .createDocument({title: this.state.title,
                        body: this.state.body,
+                       owner: this.state.owner,
                        language: `${this.state.from}-${this.state.to}`})
       .then(resFromCreate => {
         axios
