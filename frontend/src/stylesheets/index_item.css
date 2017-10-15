@@ -20,7 +20,8 @@
 .show-button {
   background-color: #03A9F4;
   border: none;
-  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 5px #888888;
+  box-shadow: 2px 2px 5px #888888;
   color: white;
 }
 

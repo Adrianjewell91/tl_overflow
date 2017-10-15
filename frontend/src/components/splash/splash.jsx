@@ -12,8 +12,8 @@ class Splash extends Component {
     this.state = {username: "", email: "", password: ""};
   }
 
-  componentWillMount() {
-    //redirect if currentUser
+  componentDidMount () {
+    window.scrollTo(0, 0)
   }
 
   handleSignUp(e) {
@@ -62,10 +62,8 @@ class Splash extends Component {
                      value={this.state.password}></input>
             </label>
             <div className="login-btn-container">
-              <button>
-                <a href="https://pure-crag-76247.herokuapp.com/login/">
+              <button onClick={this.handleLogIn}>
                 Login
-              </a>
               </button>
               <input type="submit" value="Sign Up"></input>
             </div>

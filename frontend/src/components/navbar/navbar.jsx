@@ -18,7 +18,8 @@ class NavBar extends Component {
 
   handleReturnToIndex (e) {
     e.preventDefault();
-    this.props.requestDocuments();
+    this.props.requestDocuments()
+              .then(() => this.props.history.push('/index'));
     if (document.getElementById('filter-button')) {
       document.getElementById('filter-button').textContent = "See My Documents";
     }
@@ -49,8 +50,7 @@ class NavBar extends Component {
             </div>
           </div>
           <div className="all-documents-btn-container">
-            <button onClick={this.handleReturnToIndex}>
-              <Link to={'/index'}>All Documents</Link></button>
+            <button onClick={this.handleReturnToIndex}>All Documents</button>
           </div>
           <div className="status-info-container">
             {welcome}

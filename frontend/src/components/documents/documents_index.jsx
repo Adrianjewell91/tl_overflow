@@ -9,13 +9,17 @@ class DocumentsIndex extends React.Component {
     super(props);
     this.handleClick = this.handleClick.bind(this);
     this.handleFilter = this.handleFilter.bind(this);
+    this.handleReturnToLogin = this.handleReturnToLogin.bind(this);
   }
 
   componentDidMount() {
     this.props.requestDocuments();
   }
 
-
+  handleReturnToLogin(e) {
+    e.preventDefault();
+    this.props.history.push("/")
+  }
   handleClick(e) {
     e.preventDefault();
   }
@@ -38,9 +42,18 @@ class DocumentsIndex extends React.Component {
   render() {
     let showFilter;
     if (this.props.currentUser) {
-      showFilter = <button id="filter-button"
-                           className="filter-button"
-                           onClick={this.handleFilter}>See My Documents</button>;
+      showFilter = <div className="index-buttons">
+                      <button id="filter-button"
+                             className="filter-button"
+                             onClick={this.handleFilter}>See My Documents</button>
+                       <button className="new-doc-button">
+                            <Link to={'/new'}>New Document</Link></button>
+                    </div>
+    } else {
+      showFilter = <div className="index-buttons">
+                      <button onClick={this.handleReturnToLogin}
+                              className="filter-button">Log in to post a Document</button>
+                </div>
     }
 
     return (
@@ -48,15 +61,9 @@ class DocumentsIndex extends React.Component {
         <div className="index-dashboard-container">
           <div className="index-dashboard">
             <h1 className="index-title">Documents</h1>
-            <div className="index-buttons">
-              {showFilter}
-              <button className="new-doc-button">
-                <Link to={'/new'}>New Document</Link></button>
-              </div>
-          </div>
+            {showFilter}
         </div>
-
-
+        </div>
           <ul className="index-list">
           {
             this.props.documents.map((doc) => {
