@@ -54,11 +54,11 @@ class TranslationsIndex extends React.Component {
                     <Link to={`/documents/${this.props.document.id}/translations/${trans.id}`}>Edit Me</Link>
                   </div>)
                 let type = "Translation";
-                let height = "79%";
+                let height = "78%";
                 if (idx === 0) {
                   link = "";
                   type = "Original Text";
-                  height = "86%"
+                  height = "85%"
                 }
                 return (
                   <div key={this.randomString()} className="translation-list-container">

@@ -11,6 +11,7 @@ import {ProtectedRoute} from './util/route_util.jsx';
 import "./stylesheets/carousel.css";
 import "./stylesheets/docForm.css";
 import "./stylesheets/detail.css";
+import "./stylesheets/new_translation.css";
 
 
 class App extends Component {

@@ -1,0 +1,43 @@
+.doc-body-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: #f0f3f4;
+  border-top: 1px solid #757575;
+  border-bottom: 1px solid #757575;
+  min-height: 600px;
+}
+
+.doc-body-inner-container {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+
+.translation-testfield {
+  height: 600px;
+  width: 700px;
+  box-shadow: 2px 2px 5px #888888;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+.translation-form {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+}
+
+.translation-form input[type="submit"] {
+  background: #03A9F4;
+  box-shadow: 2px 2px 5px #888888;
+  border: none;
+  height: 40px;
+  margin-left: 30px;
+  width: 200px;
+  color: white;
+  font-weight: bold;
+  padding: 0px 10px 0px 10px;
+}

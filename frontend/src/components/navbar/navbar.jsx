@@ -18,23 +18,34 @@ class NavBar extends Component {
   render() {
 
     const welcome = this.props.currentUser ?
-      <div>
+      <div className="status-info-inner-container">
         Hello {this.props.currentUser.username}.
         <button onClick={this.handleSignOut}>Sign Out!</button>
       </div> :
-      <div>
-        <Link to={"/"}>Login</Link> to submit a translation!
+      <div className="status-info-inner-container">
+        <Link to={"/"}>Login</Link>
       </div>
 
     return (
       <div className='navbar'>
-        <div className="nav-logo-and-user-info">
-          <div className="logo">
-            Translation Overflow
+        <div className="navbar-inner-container">
+          <div className="nav-logo-and-user-info">
+            <div className="logo-container">
+              <div className="logo">
+                <img src="http://res.cloudinary.com/ssj6porfy/image/upload/v1508050340/tl_overflow_logo_s80w93.png"></img>
+              </div>
+              <div className="logo-words">
+                Translation Overflow
+              </div>
+            </div>
           </div>
-          {welcome}
+          <div className="all-documents-btn-container">
+            <button><Link to={'/index'}>All Documents</Link></button>
+          </div>
+          <div className="status-info-container">
+            {welcome}
+          </div>
         </div>
-        <button><Link to={'/index'}>All Documents</Link></button>
       </div>
     );
   }
