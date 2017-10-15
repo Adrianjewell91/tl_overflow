@@ -5,9 +5,6 @@
     margin-top: 80px;
 }
 
-.scrollable-index-items {
-}
-
 .index-list {
   height: 70%;
   overflow-y: scroll;
@@ -39,6 +36,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-right: 2%;
 }
 
 .index-buttons * {
@@ -51,6 +49,7 @@
   color: white;
   border: none;
   margin-top: 0.5%;
+  height: 30px;
 }
 
 .filter-button:focus, .new-doc-button:focus {
@@ -59,7 +58,6 @@
 
 .filter-button:hover, .new-doc-button:hover {
   outline: none;
-  color: #D1C4E9
 }
 
 .new-doc-button * {
@@ -68,9 +66,10 @@
 
 .new-doc-button *:hover {
   color:white;
-  color: #D1C4E9
+
 }
 
 .index-dashboard-title {
   color:white;
+  margin-left: 2.5%;
 }

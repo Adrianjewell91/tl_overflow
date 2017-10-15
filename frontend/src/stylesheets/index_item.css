@@ -33,7 +33,7 @@
   display: flex;
   justify-content:space-between;
   align-items: center;
-  width: 99%;
+  width: 95%;
 }
 
 .l-tag-small {
@@ -46,6 +46,6 @@
   align-items: flex-start;
 }
 
-.show-button:hover {
+/*.show-button:hover {
   color: #D1C4E9
-}
+}*/
