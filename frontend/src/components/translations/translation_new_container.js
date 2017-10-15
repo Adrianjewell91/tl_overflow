@@ -6,7 +6,8 @@ import TranslationNew from './translation_new';
 
 const mapStateToProps = (state, ownProps) => {
   if (Object.values(state.entities.translations).length !== 0) {
-    return { translation: Object.values(state.entities.translations) }
+    return { translation: Object.values(state.entities.translations),
+             currentUser: state.session.currentUser }
   } else {
     return { translation: {} }
   }

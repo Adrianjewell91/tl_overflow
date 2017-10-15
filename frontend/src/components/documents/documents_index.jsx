@@ -24,9 +24,11 @@ class DocumentsIndex extends React.Component {
     return (
       <div className="document-index">
 
-        <div className="index-dashboard">
-          <h1 className="index-title">Documents</h1>
-          <button><Link to={'/new'}>New Document</Link></button>
+        <div className="index-dashboard-container">
+          <div className="index-dashboard">
+            <h1 className="index-title">Documents</h1>
+            <button><Link to={'/new'}>New Document</Link></button>
+          </div>
         </div>
 
         <ul className="index-list">

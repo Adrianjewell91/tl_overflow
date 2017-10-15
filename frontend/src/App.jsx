@@ -6,10 +6,13 @@ import SplashContainer from './components/splash/splash_container';
 import DocumentDetailContainer from './components/documents/document_detail_container';
 import TranslationNewContainer from "./components/translations/translation_new_container";
 import NavBar from './components/navbar/navbar_container';
-// import {ProtectedRoute} from './util/route_util.jsx';s
+import {ProtectedRoute} from './util/route_util.jsx';
+
 import "./stylesheets/carousel.css";
+import "./stylesheets/docForm.css";
 import "./stylesheets/detail.css";
 import "./stylesheets/new_translation.css";
+
 
 class App extends Component {
 
@@ -19,8 +22,8 @@ class App extends Component {
         <NavBar/>
         <Switch>
           <Route path="/index" component={DocumentsIndexContainer}/>
-          <Route path="/new" component={DocumentFormContainer}/>
-          <Route exact path="/documents/:documentId/translations/:translationId" component={TranslationNewContainer}/>
+          <ProtectedRoute path="/new" component={DocumentFormContainer}/>
+          <ProtectedRoute exact path="/documents/:documentId/translations/:translationId" component={TranslationNewContainer}/>
           <Route path="/documents/:documentId" component={DocumentDetailContainer}/>
           <Route path="/" component={SplashContainer}/>
         </Switch>

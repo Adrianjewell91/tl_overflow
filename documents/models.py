@@ -6,6 +6,7 @@ class Document(models.Model):
     title = models.CharField(max_length=100, blank=True, default='')
     language = models.CharField(max_length=100, blank=True, default='')
     body = models.TextField()
+    owner = models.CharField(max_length=100, blank=True, default='')
 
     class Meta:
         ordering = ('created',)
@@ -17,6 +18,7 @@ class Translation(models.Model):
     body = models.TextField()
     doc_id = models.CharField(max_length=10, blank=True, default='')
     document = models.ForeignKey(Document, related_name='translations', default='')
+    owner = models.CharField(max_length=100, blank=True, default='')
 
     class Meta:
         unique_together = ('document', 'created')

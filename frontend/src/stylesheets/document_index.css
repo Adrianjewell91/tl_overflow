@@ -1,15 +1,25 @@
 .document-index {
     display: flex;
     flex-direction: column;
+    margin-top: 1%;
 }
 
 .index-list {
   list-style: none;
+  list-style-type: none;
   text-align: center;
+  margin: 0;
+}
+
+.index-dashboard-container {
+  display: flex;
+  justify-content: center;
 }
 
 .index-dashboard {
   display:flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  width: 95%;
 }

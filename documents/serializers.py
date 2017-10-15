@@ -6,7 +6,7 @@ class DocumentSerializer(serializers.ModelSerializer):
     translations = serializers.StringRelatedField(many=True, required=False)
     class Meta:
         model = Document
-        fields = ('id','title','body','language','translations')
+        fields = ('id','title','body','language','translations','owner')
     # id=serializers.IntegerField(read_only=True)
     # title=serializers.CharField(required=False, allow_blank=True, max_length=100)
     # body=serializers.CharField(style={'base_template': 'textarea.html'})
@@ -25,4 +25,4 @@ class DocumentSerializer(serializers.ModelSerializer):
 class TranslationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Translation
-        fields = ('id','title','body','language', 'doc_id')
+        fields = ('id','title','body','language', 'doc_id', 'owner')
