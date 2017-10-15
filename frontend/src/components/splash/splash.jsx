@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 
+import '../../stylesheets/splash.css';
+
 class Splash extends Component {
   constructor(props) {
     super(props);
@@ -62,7 +64,7 @@ class Splash extends Component {
 
             <input type="submit" value="Sign Up"></input>
           </form>
-            <button onClick={this.handleLogIn}>Log In</button>
+            <button onClick={this.handleLogIn}>NoBackend Log In</button>
 
             <button>
               <a href="https://pure-crag-76247.herokuapp.com/login/">
@@ -71,14 +73,19 @@ class Splash extends Component {
 
 
     return (
-      <div>
-        <h1>Get better results at Translate OverFlow</h1>
-        {form}
-        <ul>
-          {
-            this.props.errors.map((err) => <li key={err}>{err}</li>)
-          }
-        </ul>
+      <div className="splash">
+        <div className="splash-greeting">
+          <h1>Get better results at Translate OverFlow</h1>
+        </div>
+
+        <div className="splash-form">
+          {form}
+          <ul>
+            {
+              this.props.errors.map((err) => <li key={err}>{err}</li>)
+            }
+          </ul>
+        </div>
       </div>
     );
   }
