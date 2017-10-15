@@ -9,6 +9,7 @@ import NavBar from './components/navbar/navbar_container';
 // import {ProtectedRoute} from './util/route_util.jsx';s
 import "./stylesheets/carousel.css";
 import "./stylesheets/detail.css";
+import "./stylesheets/new_translation.css";
 
 class App extends Component {
 

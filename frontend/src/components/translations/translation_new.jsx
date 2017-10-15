@@ -50,11 +50,13 @@ class TranslationNew extends React.Component {
           <h1>New Translation</h1>
         </div>
         <div className="doc-body-container">
-          <div className="translation-form-container">
-            <form onSubmit={this.handleSubmit} className="translation-form">
-              <textarea className="translation-testfield" onChange={this.update("body")} value={text}/>
-              <input type="submit" value="Create New Translation"></input>
-            </form>
+          <div className="doc-body-inner-container">
+            <div className="translation-form-container">
+              <form onSubmit={this.handleSubmit} className="translation-form">
+                <textarea className="translation-testfield" onChange={this.update("body")} value={text}/>
+                <input type="submit" value="Create New Translation"></input>
+              </form>
+            </div>
           </div>
         </div>
       </div>
