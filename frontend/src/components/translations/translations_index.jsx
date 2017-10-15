@@ -54,17 +54,30 @@ class TranslationsIndex extends React.Component {
                     <Link to={`/documents/${this.props.document.id}/translations/${trans.id}`}>Edit Me</Link>
                   </div>)
                 let type = "Translation";
-                let height = "78%";
+                let height = "72%";
+                let transNum = "";
                 if (idx === 0) {
                   link = "";
                   type = "Original Text";
-                  height = "85%"
+                  height = "79%"
+                  transNum = "";
+                }
+                let createdBy = `Created by: ${trans.owner}`;
+                if (idx === 1) {
+                  createdBy = "Powered by Yandex";
+                }
+                if (idx > 1) {
+                  transNum = idx - 1;
+                  type = "Revision " + transNum
                 }
                 return (
                   <div key={this.randomString()} className="translation-list-container">
                     <div key={this.randomString()} className="translation-list">
                       <div className="translation-list-title">
-                        {type}: {trans.title}
+                        {type}
+                      </div>
+                      <div className="translation-list-user">
+                        { createdBy }
                       </div>
                       <div className="translation-list-language">
                         Language: {trans.language}
