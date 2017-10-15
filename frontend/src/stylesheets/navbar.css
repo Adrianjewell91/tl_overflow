@@ -8,6 +8,7 @@
   margin: 0;
   top: 0%;
   box-shadow: 2px 2px 5px rgb(211, 213, 214);
+  z-index: 1000;
 }
 .navbar-inner-container {
   display: flex;

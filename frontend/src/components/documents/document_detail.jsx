@@ -16,7 +16,10 @@ class DocumentDetail extends React.Component {
     return (
       <div className="document-detail-container">
       <div className="document-detail-header">
-        <h1>Document Title: {this.props.document.title}</h1>
+        <h1>Translation Summary</h1>
+      </div>
+      <div className="document-detail-title">
+        <h3>Title: {this.props.document.title}</h3>
       </div>
         <TranslationsIndexContainer />
       </div>
