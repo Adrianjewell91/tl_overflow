@@ -56,7 +56,7 @@ class DocumentsIndex extends React.Component {
           </div>
         </div>
 
-        <div className="scrollable-index-items">
+
           <ul className="index-list">
           {
             this.props.documents.map((doc) => {
@@ -64,7 +64,6 @@ class DocumentsIndex extends React.Component {
             })
           }
           </ul>
-        </div>
 
       </div>
     );
