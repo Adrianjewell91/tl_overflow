@@ -29,3 +29,9 @@
 .l-tag-small {
   color: #673AB7;
 }
+
+.index-item-button-div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}

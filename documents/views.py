@@ -34,6 +34,7 @@ class DocumentViewSet(viewsets.ViewSet):
         return Response(serializer.errors, status=400)
 
     def retrieve(self, request, pk=None):
+
         document = Document.objects.get(pk=pk)
         serializer = DocumentSerializer(document)
         return Response(serializer.data)

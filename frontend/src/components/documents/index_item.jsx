@@ -17,6 +17,7 @@ export const IndexItem = ({doc}) => {
          <div className="index-item-button-div">
              <Link to={`/documents/${doc.id}`}>
                <button className="show-button">See Translations</button></Link>
+               <span>Posted by: {doc.owner}</span>
          </div>
        </div>
     </li>
