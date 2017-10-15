@@ -7,6 +7,16 @@ class TranslationNew extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+<<<<<<< HEAD
+=======
+  componentDidMount() {
+    const doc_id = this.props.match.params.documentId;
+    const trans_id = this.props.match.params.translationId;
+    this.props.requestTranslation(doc_id, trans_id)
+      .then((res) => this.setState(res.translation));
+  }
+
+>>>>>>> a53bc9ece5875ebf6e4e20cf5b97c614053a2836
   update(field) {
     return (e) => {
       this.setState({[field]: e.target.value});
@@ -19,8 +29,6 @@ class TranslationNew extends React.Component {
     delete this.state["id"];
     // eslint-disable-next-line
     this.state.doc_id = doc_id;
-    console.log(doc_id);
-    console.log(this.state);
     this.props.createTranslation(doc_id, this.state)
       .then(() => {
         this.props.history.goBack();
@@ -41,7 +49,9 @@ class TranslationNew extends React.Component {
     }
     return (
       <div className="translation-detail-container">
-        <h1>New Translation</h1>
+        <div className="translation-detail-header">
+          <h1>New Translation</h1>
+        </div>
         <div className="doc-body-container">
           <div className="translation-form-container">
             <form onSubmit={this.handleSubmit} className="translation-form">
