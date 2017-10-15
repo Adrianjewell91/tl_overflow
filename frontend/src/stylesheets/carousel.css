@@ -5506,12 +5506,12 @@ blockquote p {
   position: relative;
   left: 0;
   top: 0;
-  display: block;
+  display: inline-flex;
   margin-left: auto;
   margin-right: auto; }
   .slick-track:before, .slick-track:after {
     content: "";
-    display: table; }
+    display: inline-flex; }
   .slick-track:after {
     clear: both; }
   .slick-loading .slick-track {
