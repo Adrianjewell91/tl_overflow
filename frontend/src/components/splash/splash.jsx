@@ -25,6 +25,7 @@ class Splash extends Component {
     e.preventDefault();
     this.props.logIn({username: this.state.username,
                       password: this.state.password});
+    this.setState({username: "", password: ""});
   }
 
 

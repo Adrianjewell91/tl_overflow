@@ -9,7 +9,7 @@
 }
 
 .index-list {
-  height: 50%;
+  height: 70%;
   overflow-y: scroll;
   list-style: none;
   list-style-type: none;
@@ -71,6 +71,6 @@
   color: #D1C4E9
 }
 
-.index-title {
+.index-dashboard-title {
   color:white;
 }

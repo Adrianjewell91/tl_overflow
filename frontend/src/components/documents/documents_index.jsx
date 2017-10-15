@@ -60,7 +60,7 @@ class DocumentsIndex extends React.Component {
       <div className="document-index">
         <div className="index-dashboard-container">
           <div className="index-dashboard">
-            <h1 className="index-title">Documents</h1>
+            <h1 className="index-dashboard-title">Documents</h1>
             {showFilter}
         </div>
         </div>
