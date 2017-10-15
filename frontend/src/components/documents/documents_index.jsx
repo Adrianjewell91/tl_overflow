@@ -23,18 +23,20 @@ class DocumentsIndex extends React.Component {
   render() {
     return (
       <div className="document-index">
+
         <div className="index-dashboard">
           <h1 className="index-title">Documents</h1>
           <button><Link to={'/new'}>New Document</Link></button>
         </div>
+
         <ul className="index-list">
         {
           this.props.documents.map((doc) => {
             return (<li key={doc.id}>
-                   {doc.id}:{doc.title} ({doc.language}): <Link to={`/documents/${doc.id}`}>Translations</Link></li>)})
+                   ({doc.language}):{doc.title}: <Link to={`/documents/${doc.id}`}>See Translations</Link></li>)})
         }
         </ul>
-        <button onClick={this.handleClick}>Log Props.documents</button>
+        
       </div>
     );
   }

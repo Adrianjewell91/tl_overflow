@@ -5,4 +5,5 @@
 
 .nav-logo-and-user-info {
   display: flex;
+  align-items: center;
 }

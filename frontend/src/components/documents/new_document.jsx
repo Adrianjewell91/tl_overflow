@@ -24,7 +24,9 @@ class DocumentForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props
-      .createDocument(this.state)
+      .createDocument({title: this.state.title,
+                       body: this.state.body,
+                       language: `${this.state.from}-${this.state.to}`})
       .then(resFromCreate => {
         axios
           .post(
@@ -35,7 +37,7 @@ class DocumentForm extends React.Component {
             this.props.createTranslation(resFromCreate.a_document.id, {
               title: `${resFromCreate.a_document.title}_TR`,
               body: `${res.data.text[0]}`,
-              language: `${res.data.lang}`
+              language: `${resFromCreate.a_document.language}`
             });
           });
       })

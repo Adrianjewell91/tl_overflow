@@ -15,7 +15,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     requestTranslation: (doc_id, trans_id) => dispatch(requestTranslation(doc_id, trans_id)),
-    createTranslation: (translation) => dispatch(createTranslation(translation))
+    createTranslation: (doc_id, translation) => dispatch(createTranslation(doc_id, translation))
   };
 }
 

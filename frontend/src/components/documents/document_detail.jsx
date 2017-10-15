@@ -12,7 +12,6 @@ class DocumentDetail extends React.Component {
       .then(res => this.setState(res));
   }
 
-
   render() {
     return (
       <div>

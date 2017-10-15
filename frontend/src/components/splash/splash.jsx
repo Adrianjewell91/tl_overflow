@@ -42,7 +42,7 @@ class Splash extends Component {
 
   render() {
     const form = this.props.currentUser ?
-      <div>
+      <div className="splash-logged-in">
         <button onClick={this.handleSignOut}>You're logged in. Sign Out!</button>
         <Link to={"/index"}> See Recent Translations</Link>
       </div> :
@@ -74,17 +74,19 @@ class Splash extends Component {
 
     return (
       <div className="splash">
-        <div className="splash-greeting">
-          <h1>Get better results at Translate OverFlow</h1>
-        </div>
+        <div className="splash-content">
+          <div className="splash-greeting">
+            <h1>Get better results at Translate OverFlow</h1>
+          </div>
 
-        <div className="splash-form">
-          {form}
-          <ul>
-            {
-              this.props.errors.map((err) => <li key={err}>{err}</li>)
-            }
-          </ul>
+          <div className="splash-form">
+            {form}
+            <ul>
+              {
+                this.props.errors.map((err) => <li key={err}>{err}</li>)
+              }
+            </ul>
+          </div>
         </div>
       </div>
     );
