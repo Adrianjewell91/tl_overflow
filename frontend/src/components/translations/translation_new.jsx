@@ -7,11 +7,6 @@ class TranslationNew extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount() {
-    console.log(this.props.match.params.translationId);
-    this.props.requestTranslation(this.props.match.params.documentId, this.props.match.params.translationId)
-      .then(res => this.setState(res.translation));
-  }
 
   update(field) {
     return (e) => {
@@ -42,7 +37,6 @@ class TranslationNew extends React.Component {
     } else {
       text = "";
     }
-    console.log(this.state);
     if (this.props.match.params.translationId) {
       text = this.state.body;
     }

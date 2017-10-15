@@ -10,17 +10,11 @@ class TranslationsIndex extends React.Component {
       title: "",
       language: ""
     }
-    this.handleClick = this.handleClick.bind(this);
     this.randomString = this.randomString.bind(this);
   }
 
   componentDidMount() {
     this.props.requestTranslations(this.props.match.params.documentId);
-  }
-
-  handleClick(e) {
-    e.preventDefault();
-    this.setState({text: e.currentTarget.innerHTML})
   }
 
   update(field) {
@@ -47,8 +41,7 @@ class TranslationsIndex extends React.Component {
       slidesToShow: 3,
       slidesToScroll: 1
     };
-    let list2 = [this.props.document].concat(this.props.translations)
-    let randKey = Math.random(10000,1000000);
+    let list2 = [this.props.document].concat(this.props.translations);
     return (
       <div className="trans-index-container">
         <div className="carousel-container">
@@ -56,19 +49,33 @@ class TranslationsIndex extends React.Component {
           <Slider {...settings}>
             {
               list2.map((trans, idx) => {
-                let link = (<Link to={`/documents/${this.props.document.id}/translations/${trans.id}`}>Edit Me</Link>)
+                let link = (
+                  <div className="translation-list-link">
+                    <Link to={`/documents/${this.props.document.id}/translations/${trans.id}`}>Edit Me</Link>
+                  </div>)
+                let type = "Translation";
+                let height = "79%";
                 if (idx === 0) {
                   link = "";
+                  type = "Original Text";
+                  height = "86%"
                 }
                 return (
                   <div key={this.randomString()} className="translation-list-container">
-                    <div key={this.randomString()} className="translation-list"
-                         onClick={this.handleClick}>
-                         {trans.title} ({trans.language}): {trans.body}
+                    <div key={this.randomString()} className="translation-list">
+                      <div className="translation-list-title">
+                        {type}: {trans.title}
+                      </div>
+                      <div className="translation-list-language">
+                        Language: {trans.language}
+                      </div>
+                      { link }
+                      <div className="translation-list-body" style={{height: height}}>
+                         {trans.body}
+                      </div>
                     </div>
-                    { link }
                   </div>)})
-            }
+                }
             </Slider>
           </div>
         </div>
