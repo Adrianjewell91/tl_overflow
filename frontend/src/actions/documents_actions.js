@@ -18,6 +18,11 @@ export const requestDocuments = () => (dispatch) => {
     .then((documents) => dispatch(receiveDocuments(documents.data)))
 };
 
+export const requestOwnerDocuments = (owner) => (dispatch) => {
+  return DocumentsUtil.getOwnerDocuments(owner)
+    .then((documents) => dispatch(receiveDocuments(documents.data)))
+};
+
 export const createDocument = (a_document) => (dispatch) => {
   return DocumentsUtil.createDocument(a_document)
     .then((a_document) => dispatch(receiveDocument(a_document.data)))

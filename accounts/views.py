@@ -37,7 +37,6 @@ class UserCreate(APIView):
         if serializer.is_valid():
             new_user = User.objects.create(username=request.data['username'])
             new_user.set_password(request.data['password'])
-            # new_user.is_staff = True
             new_user.is_superuser = True
             new_user.is_staff = True
             new_user.save()
