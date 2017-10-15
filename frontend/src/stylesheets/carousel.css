@@ -5630,17 +5630,7 @@ blockquote p {
     background: rgb(70, 150, 236);
   }
 
-.translation-list-container {
-  padding: 10px 5px 10px 10px;
-}
-.translation-list {
-  height: 500px;
-  border: 1px solid blueviolet;
-  padding: 10px;
-  overflow: scroll;
-}
 
-.slick-cloned { display: none !important; }
 
 /* Dots */
 .slick-dotted.slick-slider {
