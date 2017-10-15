@@ -22,7 +22,6 @@ class TranslationNew extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger
     const doc_id = this.props.match.params.documentId;
     delete this.state["id"];
     // eslint-disable-next-line

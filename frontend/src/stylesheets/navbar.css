@@ -1,9 +1,87 @@
 .navbar {
   display: flex;
-  justify-content:space-between;
+  justify-content: center;
+  height: 70px;
+  background: #D1C4E9;
+  position: fixed;
+  width: 100%;
+  margin: 0;
+  top: 0%;
+  box-shadow: 2px 2px 5px rgb(211, 213, 214);
+}
+.navbar-inner-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 90%;
+  justify-content: space-between;
 }
 
 .nav-logo-and-user-info {
   display: flex;
   align-items: center;
+}
+
+.nav-logo-and-user-info, .all-documents-btn-container, .status-info-container {
+  width: 33.3%;
+}
+
+.all-documents-btn-container, .status-info-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.all-documents-btn-container button {
+  background: #512DA8;
+  box-shadow: 2px 2px 5px #888888;
+  border: none;
+  color: white;
+  padding: 0px 10px 2px 10px;
+  height: 30px;
+  display: flex;
+  outline: 0;
+}
+.status-info-inner-container {
+  background: #512DA8;
+  box-shadow: 2px 2px 5px #888888;
+  border: none;
+  color: white;
+  height: 30px;
+  width: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.all-documents-btn-container button a, .status-info-inner-container a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  vertical-align: middle;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+
+.status-info-inner-container a {
+  padding-top: 6px;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logo img {
+  height: 60px;
+  width: 80px;
+}
+
+.logo-words {
+  font-size: 26px;
+  font-weight: bold;
+  color: white;
 }
