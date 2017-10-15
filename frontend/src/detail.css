@@ -29,14 +29,20 @@ body {
   width: 95%;
 }
 
+.translation-list-container {
+  max-width: 491.97px;
+}
+
 .translation-list-container a {
   position: absolute;
   top: 79%;
-  height: 80px;
+  height: 20px;
   width: 14%;
+  max-width: 20px;
   margin-left: 40px;
   color: transparent;
   background: transparent;
+  /*padding-top: 30px;*/
 }
 
 .translation-list-container a:hover {
@@ -49,10 +55,6 @@ body {
   0px;
   font-size: 20px;
   font-weight: bolder;
-}
-
-.hidden {
-  display: none;
 }
 
 .translation-detail-container {

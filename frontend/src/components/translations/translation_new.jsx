@@ -8,8 +8,9 @@ class TranslationNew extends React.Component {
   }
 
   componentDidMount() {
+    console.log(this.props.match.params.translationId);
     this.props.requestTranslation(this.props.match.params.documentId, this.props.match.params.translationId)
-      .then(() => this.setState(this.props.translation[this.props.translation.length - 1]));
+      .then(res => this.setState(res.translation));
   }
 
   update(field) {
@@ -20,9 +21,15 @@ class TranslationNew extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    const doc_id = this.props.match.params.documentId;
     delete this.state["id"];
+    this.state.doc_id = doc_id;
+    console.log(doc_id);
     console.log(this.state);
-    this.props.createTranslation(this.state).then(() => this.history.push(`/documents/${this.props.match.params.documentId}`));
+    this.props.createTranslation(doc_id, this.state)
+      .then(() => {
+        this.props.history.goBack();
+      });
   }
 
   render() {

@@ -36,7 +36,6 @@ class TranslationsIndex extends React.Component {
       slidesToShow: 2,
       slidesToScroll: 1
     };
-
     let list2 = [this.props.document].concat(this.props.translations)
     let randKey = Math.random(10000,1000000);
     return (
