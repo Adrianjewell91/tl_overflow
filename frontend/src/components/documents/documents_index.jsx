@@ -15,9 +15,12 @@ class DocumentsIndex extends React.Component {
     this.props.requestDocuments();
   }
 
-    // componentWillReceiveProps() {
-    //   this.props.requestDocuments();
-    // }
+  // componentWillReceiveProps(newProps) {
+  //   if (this.props.documents.length !== newProps.documents.length) {
+  //     this.props.requestDocuments();
+  //   }
+  // }
+
 
   handleClick(e) {
     e.preventDefault();
@@ -37,7 +40,7 @@ class DocumentsIndex extends React.Component {
         <div className="index-dashboard-container">
           <div className="index-dashboard">
             <h1 className="index-title">Documents</h1>
-            <button onClick={this.handleFilter}>Filter by My Posts</button>
+  
             <button><Link to={'/new'}>New Document</Link></button>
           </div>
         </div>
