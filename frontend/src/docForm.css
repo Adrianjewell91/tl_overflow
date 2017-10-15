@@ -1,0 +1,116 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    background: #fff;
+    color: #222;
+    padding: 0;
+    margin: 0;
+    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.new-doc-form-container {
+  width: 100%;
+  display: flex;
+}
+
+.new-doc-form-box {
+  flex-direction: column;
+  display: flex;
+  width: 70%;
+  align-items: center;
+  margin-left: 40px;
+
+}
+
+.formHeader {
+  font-size: 24px;
+}
+
+.new-doc-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.docForm-title {
+  display: flex;
+  padding: 10px;
+}
+
+.docForm-body {
+  display: flex;
+  padding: 10px;
+}
+
+.docForm-langOptions {
+  display: flex;
+  /*width: 25%;*/
+}
+
+.docForm-langOptions select {
+  margin-right: 15px;
+  padding: 5px 14px 5px 14px;
+  height: 34px;
+  width: 120px;
+}
+
+.docForm-submit {
+  display: flex;
+  height: 34px;
+  width: 200px;
+}
+
+
+
+
+
+/*.docForm-container{
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.translation-form-container {
+  width: 95%;
+}
+
+.translation-list-container a {
+  position: absolute;
+  top: 79%;
+  height: 80px;
+  width: 14%;
+  margin-left: 40px;
+  color: transparent;
+  background: transparent;
+}
+
+.translation-list-container a:hover {
+  background: blueviolet;
+  color: white;
+  font-size: 16px;
+  font-family: sans-serif;
+  text-align: center;
+  padding-top: 3
+  0px;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.hidden {
+  display: none;
+}
+
+.document-new-container {
+  width: 80%;
+  margin: auto;
+}*/

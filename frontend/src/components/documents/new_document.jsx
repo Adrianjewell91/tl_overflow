@@ -63,47 +63,60 @@ class DocumentForm extends React.Component {
     const LangsKeys = Object.keys(Langs).sort()
 
     return (
-      <div>
-        <h1>New Document</h1>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            placeholder="Title"
-            onChange={this.updateField("title")}
-            value={this.state.title}
-          />
-          <br />
+      <div className="new-doc-form-container">
 
-          <textarea
-            rows="20"
-            cols="100"
-            type="text"
-            placeholder="What do you want to translate?"
-            onChange={this.updateField("body")}
-            value={this.state.body}
-          />
+        <form onSubmit={this.handleSubmit} className="new-doc-form-box">
+          <h1 className="formHeader">New Document</h1>
+            <div className="new-doc-form">
 
-          <br />
-          <select onChange={this.updateField("from")}>
-            <option value="Select Language" disabled="true" selected="true">
-              From
-            </option>
-            {LangsKeys.map(lang => (
-              <option value={Langs[lang]}>{lang}</option>
-            ))}
-          </select>
+              <label>Title
+                <br/>
+                <input
+                  className="docForm-title"
+                  type="text"
+                  onChange={this.updateField("title")}
+                  value={this.state.title}
+                  />
+              </label>
 
-          <select onChange={this.updateField("to")}>
-            <option value="Select Language" disabled="true" selected="true">
-              To
-            </option>
-            {LangsKeys.map(lang => (
-              <option value={Langs[lang]}>{lang}</option>
-            ))}
-          </select>
-          <br />
 
-          <input type="submit" value="Create New Document" />
+              <label>Document Body
+                <br/>
+                <textarea
+                  className="docForm-body"
+                  rows="20"
+                  cols="100"
+                  type="text"
+                  onChange={this.updateField("body")}
+                  value={this.state.body}
+                  />
+              </label>
+
+              <div className="docForm-langOptions">
+                <select onChange={this.updateField("from")} >
+                  <option value="Select Language" disabled="true" selected="true">
+                    From
+                  </option>
+                  {LangsKeys.map(lang => (
+                    <option value={Langs[lang]}>{lang}</option>
+                  ))}
+                </select>
+
+                <select onChange={this.updateField("to")} >
+                  <option value="Select Language" disabled="true" selected="true">
+                    To
+                  </option>
+                  {LangsKeys.map(lang => (
+                    <option value={Langs[lang]}>{lang}</option>
+                  ))}
+                </select>
+              </div>
+              <br />
+
+              <div className="docForm-submit" >
+                <input type="submit" value="Create Document" />
+              </div>
+          </div>
         </form>
       </div>
     );
