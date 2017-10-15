@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import '../../stylesheets/navbar.css';
 
 class NavBar extends Component {
   // eslint-disable-next-line
@@ -22,12 +23,18 @@ class NavBar extends Component {
         <button onClick={this.handleSignOut}>Sign Out!</button>
       </div> :
       <div>
-        Hello there. Please <Link to={"/"}>Login</Link> to submit a translation!
+        <Link to={"/"}>Login</Link> to submit a translation!
       </div>
 
     return (
-      <div>
-        {welcome}
+      <div className='navbar'>
+        <div className="nav-logo-and-user-info">
+          <div className="logo">
+            Translation Overflow
+          </div>
+          {welcome}
+        </div>
+        <button><Link to={'/index'}>All Documents</Link></button>
       </div>
     );
   }

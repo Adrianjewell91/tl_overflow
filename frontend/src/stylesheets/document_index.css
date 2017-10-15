@@ -1,0 +1,15 @@
+.document-index {
+    display: flex;
+    flex-direction: column;
+}
+
+.index-list {
+  list-style: none;
+  text-align: center;
+}
+
+.index-dashboard {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

@@ -1,0 +1,9 @@
+.navbar {
+  display: flex;
+  justify-content:space-between;
+}
+
+.nav-logo-and-user-info {
+  display: flex;
+  align-items: center;
+}

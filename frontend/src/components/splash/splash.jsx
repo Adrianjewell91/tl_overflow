@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 
+import '../../stylesheets/splash.css';
+
 class Splash extends Component {
   constructor(props) {
     super(props);
@@ -25,6 +27,7 @@ class Splash extends Component {
                       password: this.state.password});
   }
 
+
   handleSignOut(e) {
     e.preventDefault();
     this.setState({username: "", email: "", password: ""})
@@ -39,7 +42,7 @@ class Splash extends Component {
 
   render() {
     const form = this.props.currentUser ?
-      <div>
+      <div className="splash-logged-in">
         <button onClick={this.handleSignOut}>You're logged in. Sign Out!</button>
         <Link to={"/index"}> See Recent Translations</Link>
       </div> :
@@ -61,23 +64,30 @@ class Splash extends Component {
 
             <input type="submit" value="Sign Up"></input>
           </form>
-            HOW TO LOGIN:
-              1. Go to www.website.com/login.
-              2. Login.
-              3. Log in here with them same credentials.
-            <button onClick={this.handleLogIn}>Log In</button>
+            <button onClick={this.handleLogIn}>NoBackend Log In</button>
+
+            <button>
+              <a href="https://pure-crag-76247.herokuapp.com/login/">
+                      HEROKU LOGIN</a></button>
         </div>
 
 
     return (
-      <div>
-        <h1>Get better results at Translate OverFlow</h1>
-        {form}
-        <ul>
-          {
-            this.props.errors.map((err) => <li key={err}>{err}</li>)
-          }
-        </ul>
+      <div className="splash">
+        <div className="splash-content">
+          <div className="splash-greeting">
+            <h1>Get better results at Translate OverFlow</h1>
+          </div>
+
+          <div className="splash-form">
+            {form}
+            <ul>
+              {
+                this.props.errors.map((err) => <li key={err}>{err}</li>)
+              }
+            </ul>
+          </div>
+        </div>
       </div>
     );
   }

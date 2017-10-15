@@ -1,0 +1,23 @@
+.index-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 1px solid #D1C4E9;
+  margin: 1%;
+  align-items: center;
+}
+
+.index-title {
+  font-weight: bold;
+}
+
+.show-button {
+  background-color: #03A9F4;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+.index-item-stats {
+  text-align: left;
+}

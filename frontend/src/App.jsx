@@ -7,11 +7,14 @@ import DocumentDetailContainer from './components/documents/document_detail_cont
 import TranslationNewContainer from "./components/translations/translation_new_container";
 import NavBar from './components/navbar/navbar_container';
 // import {ProtectedRoute} from './util/route_util.jsx';s
-import "./carousel.css";
-import "./detail.css";
-import "./docForm.css"
+
+import "./stylesheets/carousel.css";
+import "./stylesheets/docForm.css";
+import "./stylesheets/detail.css";
+
 
 class App extends Component {
+
   render() {
     return (
       <div className="App">

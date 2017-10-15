@@ -394,10 +394,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-.carousel-container {
-  width: 80%;
-  margin: auto;
-}
 
 img {
   max-width: 100%;
@@ -5634,15 +5630,7 @@ blockquote p {
     background: rgb(70, 150, 236);
   }
 
-.translation-list-container {
-  padding: 10px 5px 10px 10px;
-}
-.translation-list {
-  height: 500px;
-  border: 1px solid blueviolet;
-  padding: 10px;
-  overflow: scroll;
-}
+
 
 /* Dots */
 .slick-dotted.slick-slider {
