@@ -1,14 +1,83 @@
 .splash {
   display: flex;
   justify-content: center;
-  margin-top: 10%;
+  margin-top: 15%;
 }
 .splash-content {
   width: 80%;
   display: flex;
+  justify-content: space-around;
 }
 
 .splash-logged-in {
   display: flex;
   flex-direction: column;
+}
+
+.splash-greeting h1, .splash-greeting h2 {
+  color: #673AB7;
+}
+
+.splash-greeting h1 {
+  font-size: 60px;
+}
+
+.splash-form input[type="text"] {
+  border: none;
+  border-bottom: 1px solid #BDBDBD;
+  color: #757575;
+  outline: 0;
+}
+
+.splash-form input[type="text"]:focus {
+  border: none;
+  border-bottom: 1px solid #03A9F4;
+  color: #03A9F4;
+}
+
+.splash-form input[type="text"]:hover {
+  border: none;
+  border-bottom: 1px solid #03A9F4;
+  color: #03A9F4;
+}
+
+.splash-form input[type="submit"] {
+  background: #512DA8;
+  box-shadow: 2px 2px 5px #888888;
+  border: none;
+  font-weight: bold;
+  color: white;
+  padding: 0px 10px 2px 10px;
+  height: 30px;
+  display: flex;
+  outline: 0;
+  margin-left: 30px;
+}
+
+.login-btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.splash-form button {
+  background: white;
+  font-weight: bold;
+  border: 1px solid #03A9F4;
+  box-shadow: 2px 2px 5px #888888;
+}
+
+.splash-form button a {
+  text-decoration: none;
+  color: #03A9F4;
+  padding: 0px 10px 2px 10px;
+}
+
+.splash-form button:hover, .splash-form button a:hover {
+  background: #03A9F4;
+  color: white;
+}
+
+.splash-form {
+  width: 400px;
 }

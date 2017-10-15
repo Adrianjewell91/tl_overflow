@@ -61,14 +61,15 @@ class Splash extends Component {
                      placeholder="Password"
                      value={this.state.password}></input>
             </label>
-
-            <input type="submit" value="Sign Up"></input>
+            <div className="login-btn-container">
+              <button>
+                <a href="https://pure-crag-76247.herokuapp.com/login/">
+                Login
+              </a>
+              </button>
+              <input type="submit" value="Sign Up"></input>
+            </div>
           </form>
-            <button onClick={this.handleLogIn}>NoBackend Log In</button>
-
-            <button>
-              <a href="https://pure-crag-76247.herokuapp.com/login/">
-                      HEROKU LOGIN</a></button>
         </div>
 
 
@@ -76,7 +77,9 @@ class Splash extends Component {
       <div className="splash">
         <div className="splash-content">
           <div className="splash-greeting">
-            <h1>Get better results at Translate OverFlow</h1>
+            <h2>Get better results with</h2>
+            <br/>
+            <h1>Translate OverFlow</h1>
           </div>
 
           <div className="splash-form">

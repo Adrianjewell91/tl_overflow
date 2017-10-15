@@ -32,7 +32,7 @@ class NavBar extends Component {
           <div className="nav-logo-and-user-info">
             <div className="logo-container">
               <div className="logo">
-                <img src="http://res.cloudinary.com/ssj6porfy/image/upload/v1508050340/tl_overflow_logo_s80w93.png"></img>
+                <img src="http://res.cloudinary.com/ssj6porfy/image/upload/v1508089671/tl_overflow_logo_drbmmf.png"></img>
               </div>
               <div className="logo-words">
                 Translation Overflow
