@@ -22,7 +22,7 @@ class App extends Component {
         <Switch>
           <Route path="/index" component={DocumentsIndexContainer}/>
           <ProtectedRoute path="/new" component={DocumentFormContainer}/>
-          <Route exact path="/documents/:documentId/translations/:translationId" component={TranslationNewContainer}/>
+          <ProtectedRoute exact path="/documents/:documentId/translations/:translationId" component={TranslationNewContainer}/>
           <Route path="/documents/:documentId" component={DocumentDetailContainer}/>
           <Route path="/" component={SplashContainer}/>
         </Switch>
