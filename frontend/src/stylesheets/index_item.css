@@ -8,10 +8,6 @@
   justify-content: center;
 }
 
-.index-title {
-  font-weight: bold;
-}
-
 .show-button {
   background-color: #03A9F4;
   border: none;
@@ -23,10 +19,13 @@
   text-align: left;
 }
 
-
 .index-item-stats-container {
   display: flex;
   justify-content:space-between;
   align-items: center;
   width: 99%;
+}
+
+.l-tag-small {
+  color: #673AB7;
 }

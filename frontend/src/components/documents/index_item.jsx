@@ -9,7 +9,7 @@ export const IndexItem = ({doc}) => {
     <li className="index-item">
        <div className="index-item-stats-container">
          <div className="index-item-stats">
-           <span className="language-tag">Language: {doc.language}</span>
+           <span className="language-tag">Language: <span className="l-tag-small">{doc.language}</span></span>
            <div className="index-title">Title: {doc.title}</div>
            <div>Preview: "{slice}..."</div>
          </div>

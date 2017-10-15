@@ -9,8 +9,6 @@ class TranslationNew extends React.Component {
 
   componentDidMount() {
     console.log(this.props.match.params.translationId);
-    this.props.requestTranslation(this.props.match.params.documentId, this.props.match.params.translationId)
-      .then(res => this.setState(res.translation));
   }
 
   update(field) {
