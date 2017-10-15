@@ -68,6 +68,12 @@
 
 .status-info-inner-container a {
   padding-top: 6px;
+  text-decoration: none;
+}
+
+.status-info-inner-container a:hover {
+  text-decoration: none;
+  color: white;
 }
 
 .logo-container {
