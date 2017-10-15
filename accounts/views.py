@@ -11,6 +11,7 @@ from django.contrib.auth.models import User
 from rest_framework.authtoken.models import Token
 
 from django.contrib.auth import login
+from django.contrib.auth import authenticate
 
 import datetime
 
@@ -19,18 +20,29 @@ class UserCreate(APIView):
     Creates the user.
     """
     def get(self, request, format='json'):
-        y = datetime.datetime.now()
-        y1 = y.replace(tzinfo=None)
-        potential_user = User.objects.order_by('-last_login').first()
-        x = potential_user.last_login
-        x1 = x.replace(tzinfo=None)
-        if ((y1-x1).total_seconds() < 500):
-            login(request, potential_user)
-            username = potential_user.username
-            return Response({'username': username, 'token':"Put somethine here next"},
-                         status=status.HTTP_201_CREATED)
+        # import pdb; pdb.set_trace()
+        if request.query_params.get('username',False) == False:
+            y = datetime.datetime.now()
+            y1 = y.replace(tzinfo=None)
+            potential_user = User.objects.order_by('-last_login').first()
+            x = potential_user.last_login
+            x1 = x.replace(tzinfo=None)
+            if ((y1-x1).total_seconds() < 500):
+                # login(request, potential_user)
+                username = potential_user.username
+                return Response({'username': username, 'token':""},
+                             status=status.HTTP_201_CREATED)
 
-        return Response("No current user", status=status.HTTP_400_BAD_REQUEST)
+            return Response("No current user", status=status.HTTP_400_BAD_REQUEST)
+
+        user = authenticate(username=request.query_params.get('username',None),
+                            password=request.query_params.get('password',None))
+        if user is not None:
+            login(request, user)
+            return Response({'username': request.query_params.get('username', None),
+                             'token': ""})
+        else:
+            return Response(["Invalid Credentials"], status=status.HTTP_400_BAD_REQUEST)
 
     def post(self, request, format='json'):
         serializer = UserSerializer(data=request.data)
