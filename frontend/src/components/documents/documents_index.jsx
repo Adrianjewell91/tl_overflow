@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import '../../stylesheets/document_index.css';
+import {IndexItem} from './index_item';
 
 class DocumentsIndex extends React.Component {
   constructor(props) {
@@ -16,7 +17,6 @@ class DocumentsIndex extends React.Component {
   handleClick(e) {
     e.preventDefault();
     this.props.requestDocuments();
-    console.log(this.props.documents);
   }
 
 //I want to show them on the page.
@@ -32,11 +32,11 @@ class DocumentsIndex extends React.Component {
         <ul className="index-list">
         {
           this.props.documents.map((doc) => {
-            return (<li key={doc.id}>
-                   ({doc.language}):{doc.title}: <Link to={`/documents/${doc.id}`}>See Translations</Link></li>)})
+            return (<IndexItem key={doc.id} doc={doc}/>)
+          })
         }
         </ul>
-        
+
       </div>
     );
   }
