@@ -49,19 +49,21 @@ class Splash extends Component {
       </div> :
         <div>
           <form onSubmit={this.handleSignUp}>
-            <label>
               <input type="text"
                      onChange={this.update('username')}
                      placeholder="Username"
                      value={this.state.username}></input>
-            </label>
 
-            <label>
+              <ul>
+                 {
+                   this.props.errors.map((err) => <li className="errors" key={err}>{err}</li>)
+                 }
+               </ul>
               <input type="text"
                      onChange={this.update('password')}
                      placeholder="Password"
                      value={this.state.password}></input>
-            </label>
+
             <div className="login-btn-container">
               <button onClick={this.handleLogIn}>
                 Login
@@ -83,11 +85,6 @@ class Splash extends Component {
 
           <div className="splash-form">
             {form}
-            <ul>
-              {
-                this.props.errors.map((err) => <li key={err}>{err}</li>)
-              }
-            </ul>
           </div>
         </div>
       </div>
