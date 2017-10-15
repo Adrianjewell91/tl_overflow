@@ -5640,8 +5640,6 @@ blockquote p {
   overflow: scroll;
 }
 
-.slick-cloned { display: none !important; }
-
 /* Dots */
 .slick-dotted.slick-slider {
   margin-bottom: 30px; }
