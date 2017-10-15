@@ -99,6 +99,7 @@ body {
   border: 1px solid lightgrey;
   padding: 5px;
   text-align: justify;
+  white-space: pre-wrap;
 }
 .document-detail-header h1, .translation-detail-header h1 {
   background: #673AB7;
