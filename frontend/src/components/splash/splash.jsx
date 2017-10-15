@@ -24,10 +24,9 @@ class Splash extends Component {
   handleLogIn(e) {
     e.preventDefault();
     this.props.logIn({username: this.state.username,
-                      password: this.state.password});
+                      password: this.state.password})
     this.setState({username: "", password: ""});
   }
-
 
   handleSignOut(e) {
     e.preventDefault();
@@ -36,7 +35,7 @@ class Splash extends Component {
   }
 
   update(field) {
-    return (e) => { //no periods allowed for some reason.
+    return (e) => {
       this.setState({[field]: e.target.value});
     }
   }

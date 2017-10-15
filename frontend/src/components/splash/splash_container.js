@@ -1,6 +1,8 @@
 import {connect} from 'react-redux';
 import {signUp, logIn, logOut} from '../../actions/session_actions';
 import Splash from './splash';
+// import { withRouter } from 'react-router-dom';
+
 
 const mapStateToProps = state => {
   // debugger
