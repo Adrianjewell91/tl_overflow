@@ -29,10 +29,10 @@ class NavBar extends Component {
 
     const welcome = this.props.currentUser ?
       <div className="status-info-inner-container">
-        Hello {this.props.currentUser.username}.
         <button onClick={this.handleSignOut}>Sign Out!</button>
       </div> :
       <div className="status-info-inner-container">
+        <p>Please Sign In</p>
         <Link to={"/"}>Login</Link>
       </div>
 

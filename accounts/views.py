@@ -20,7 +20,6 @@ class UserCreate(APIView):
     Creates the user.
     """
     def get(self, request, format='json'):
-        # import pdb; pdb.set_trace()
         if request.query_params.get('username',False) == False:
             y = datetime.datetime.now()
             y1 = y.replace(tzinfo=None)

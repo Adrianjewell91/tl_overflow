@@ -42,28 +42,42 @@
   display: flex;
   outline: 0;
 }
-.status-info-inner-container {
+
+.status-info-container {
+  display: flex;
+  align-items: center;
+}
+
+.status-info-inner-container p {
+  margin: 0;
+  color: #512DA8;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 30px;
+}
+.status-info-inner-container button, .status-info-inner-container a {
   background: #512DA8;
   box-shadow: 2px 2px 5px #888888;
   border: none;
   color: white;
   height: 30px;
   width: 90px;
+}
+
+.status-info-inner-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  width: 100%;
 }
 
 
-
-.all-documents-btn-container button a, .status-info-inner-container a {
+.all-documents-btn-container button, .status-info-inner-container {
   text-decoration: none;
   color: white;
   font-weight: bold;
   vertical-align: middle;
   text-align: center;
-  height: 100%;
-  width: 100%;
 }
 
 .status-info-inner-container a {
