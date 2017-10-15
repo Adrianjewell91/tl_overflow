@@ -29,6 +29,26 @@ body {
   width: 95%;
 }
 
+.trans-index-container {
+  background: #f0f3f4;
+  border-top: 1px solid #757575;
+  border-bottom: 1px solid #757575;
+}
+
+.translation-list {
+  background: white;
+  box-shadow: 2px 2px 5px #888888;
+}
+
+.translation-list-container {
+  padding: 10px 5px 10px 10px;
+}
+.translation-list {
+  height: 500px;
+  border: 1px solid #757575;
+  padding: 10px;
+  overflow: scroll;
+}
 
 .translation-list-container a {
   position: absolute;
