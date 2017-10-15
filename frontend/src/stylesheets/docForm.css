@@ -32,23 +32,29 @@ body {
 }
 
 .formHeader {
-  font-size: 24px;
+  font-weight: bold;
 }
 
 .new-doc-form {
   display: flex;
   flex-direction: column;
   width: 100%;
+  font-size: 10;
 }
 
 .docForm-title {
   display: flex;
-  padding: 10px;
+  justify-content: space-between;
+  border: 1px solid #D1C4E9;
+  align-items: center;
 }
 
 .docForm-body {
   display: flex;
-  padding: 10px;
+  height: 300px;
+  justify-content: space-between;
+  border: 1px solid #D1C4E9;
+  align-items: center;
 }
 
 .docForm-langOptions {
@@ -63,54 +69,12 @@ body {
   width: 120px;
 }
 
-.docForm-submit {
+.docForm-submit input{
   display: flex;
   height: 34px;
   width: 200px;
-}
-
-
-
-
-
-/*.docForm-container{
-  width: 80%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.translation-form-container {
-  width: 95%;
-}
-
-.translation-list-container a {
-  position: absolute;
-  top: 79%;
-  height: 80px;
-  width: 14%;
-  margin-left: 40px;
-  color: transparent;
-  background: transparent;
-}
-
-.translation-list-container a:hover {
-  background: blueviolet;
+  background-color: #03A9F4;
+  border: none;
+  border-radius: 5px;
   color: white;
-  font-size: 16px;
-  font-family: sans-serif;
-  text-align: center;
-  padding-top: 3
-  0px;
-  font-size: 20px;
-  font-weight: bolder;
-}
-
-.hidden {
-  display: none;
-}
-
-.document-new-container {
-  width: 80%;
-  margin: auto;
-}*/
+  }

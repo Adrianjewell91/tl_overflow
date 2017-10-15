@@ -72,7 +72,7 @@ class DocumentForm extends React.Component {
 
               <label>Title
                 <br/>
-                <input
+                <textarea
                   className="docForm-title"
                   type="text"
                   onChange={this.updateField("title")}
@@ -85,8 +85,6 @@ class DocumentForm extends React.Component {
                 <br/>
                 <textarea
                   className="docForm-body"
-                  rows="20"
-                  cols="100"
                   type="text"
                   onChange={this.updateField("body")}
                   value={this.state.body}
