@@ -16,6 +16,12 @@ class Splash extends Component {
     window.scrollTo(0, 0)
   }
 
+  componentDidUpdate() {
+    if (this.props.currentUser) {
+      this.props.history.push('/index');
+    }
+  }
+
   handleSignUp(e) {
     e.preventDefault();
     this.props.signUp(this.state)
