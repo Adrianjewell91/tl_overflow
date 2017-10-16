@@ -31,7 +31,7 @@ When users create a new document on Translate Overflow, a Post request would be 
 ### <a name="carousel"></a>React-Slick Carousel View Page for Revisions.
 An interactive react component we felt perfect for rendering the documents and translations.  The tiles of the carousel were styled to look like lifted pages for a real “paper-like” look.  The 1st page is always the original language text followed by the machine translation and subsequent revisions by users.
 
-<img height="500px" src=""/>
+<img height="500px" src="https://github.com/Adrianjewell91/tl_overflow/blob/start-readme/docs/screenshot.png"/>
 
 ### <a name="api"></a>RESTful Routes
 Django-Rest-Framework is the package that enables REST api.  Translate-Overflow users restful routes for managing Documents.
