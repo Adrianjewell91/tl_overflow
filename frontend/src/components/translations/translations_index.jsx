@@ -14,7 +14,6 @@ class TranslationsIndex extends React.Component {
   }
 
   componentDidMount() {
-    debugger
     this.props.requestTranslations(this.props.match.params.documentId);
   }
 
@@ -42,7 +41,8 @@ class TranslationsIndex extends React.Component {
       slidesToShow: 3,
       slidesToScroll: 1
     };
-    let list2 = [this.props.document].concat(this.props.translations);
+    let list2 = [this.props.document].concat(Object.values(this.props.translations));
+    debugger
     return (
       <div className="trans-index-container">
         <div className="carousel-container">
