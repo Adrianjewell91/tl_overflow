@@ -1,6 +1,6 @@
 # Translate Overflow
 
-[Live Link](#https://pure-crag-76247.herokuapp.com)
+[Live Link](https://pure-crag-76247.herokuapp.com)
 
 ## Background
 
