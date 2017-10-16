@@ -36,15 +36,19 @@ class TranslationsIndex extends React.Component {
 }
 
   render() {
+    let endOfList = (<div className="translation-list-container">
+                      <div className="translation-list">
+                        <h1 className="end-of-list">Create a Revision for this Document</h1>
+                      </div>
+                    </div>)
     let settings = {
       dots: true,
-      infinite: true,
+      infinite: false,
       speed: 500,
       slidesToShow: 3,
       slidesToScroll: 1
     };
     let list2 = [this.props.document].concat(Object.values(this.props.translations));
-    debugger
     return (
       <div className="trans-index-container">
         <div className="carousel-container">
@@ -74,8 +78,8 @@ class TranslationsIndex extends React.Component {
                   type = "Revision " + transNum
                 }
                 return (
-                  <div key={this.randomString()} className="translation-list-container">
-                    <div key={this.randomString()} className="translation-list">
+                  <div key={this.randomString() + idx + "test"} className="translation-list-container">
+                    <div key={this.randomString() + idx + "test"} className="translation-list">
                       <div className="translation-list-title">
                         {type}
                       </div>
@@ -92,6 +96,7 @@ class TranslationsIndex extends React.Component {
                     </div>
                   </div>)})
                 }
+                {endOfList}
             </Slider>
           </div>
         </div>

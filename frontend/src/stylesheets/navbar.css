@@ -62,6 +62,13 @@
   color: white;
   height: 30px;
   width: 90px;
+  text-decoration: none;
+  outline: 0;
+}
+
+.status-info-inner-container a:visited {
+  text-decoration: none;
+  color: white;
 }
 
 .status-info-inner-container {

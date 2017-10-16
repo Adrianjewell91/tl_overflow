@@ -119,6 +119,19 @@ body {
   font-weight: bold;
 }
 
+.end-of-list {
+  font-size: 70px;
+  text-align: center;
+  font-weight: bold;
+  color: #03A9F4;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .document-detail-header {
   margin-top: 80px;
   padding-top: 5px;
