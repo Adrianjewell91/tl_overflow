@@ -14,6 +14,7 @@ class TranslationsIndex extends React.Component {
   }
 
   componentDidMount() {
+    debugger
     this.props.requestTranslations(this.props.match.params.documentId);
   }
 

@@ -46,7 +46,7 @@ class NavBar extends Component {
                     src="http://res.cloudinary.com/ssj6porfy/image/upload/v1508089671/tl_overflow_logo_drbmmf.png"></img>
               </div>
               <div className="logo-words">
-                Translation Overflow
+                Translate Overflow
               </div>
             </div>
           </div>
