@@ -1,8 +1,8 @@
 # Translate Overflow
 
-https://pure-crag-76247.herokuapp.com/#/
+[Live Link](#https://pure-crag-76247.herokuapp.com)
 
-##Background
+## Background
 
 Translate Overflow is a web application that harnesses the power of the internet community to provide a translation service where real people offer annotations and revisions to translation requests uploaded by users for FREE.   
 
