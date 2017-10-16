@@ -42,7 +42,6 @@ class TranslationsIndex extends React.Component {
       slidesToScroll: 1
     };
     let list2 = [this.props.document].concat(Object.values(this.props.translations));
-    debugger
     return (
       <div className="trans-index-container">
         <div className="carousel-container">
