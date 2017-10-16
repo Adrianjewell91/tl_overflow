@@ -22,20 +22,20 @@
   font-size: 60px;
 }
 
-.splash-form input[type="text"] {
+.splash-form input[type="text"],.splash-form input[type="password"] {
   border: none;
   border-bottom: 1px solid #BDBDBD;
   color: #757575;
   outline: 0;
 }
 
-.splash-form input[type="text"]:focus {
+.splash-form input[type="text"]:focus,.splash-form input[type="password"]:focus {
   border: none;
   border-bottom: 1px solid #03A9F4;
   color: #03A9F4;
 }
 
-.splash-form input[type="text"]:hover {
+.splash-form input[type="text"]:hover,.splash-form input[type="password"]:hover {
   border: none;
   border-bottom: 1px solid #03A9F4;
   color: #03A9F4;

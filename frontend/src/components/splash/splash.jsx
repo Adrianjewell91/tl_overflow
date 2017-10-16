@@ -58,7 +58,7 @@ class Splash extends Component {
                    this.props.errors.map((err) => <li className="errors" key={err}>{err}</li>)
                  }
                </ul>
-              <input type="text"
+              <input type="password"
                      onChange={this.update('password')}
                      placeholder="Password"
                      value={this.state.password}></input>
