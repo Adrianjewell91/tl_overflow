@@ -41,7 +41,7 @@ class UserCreate(APIView):
             return Response({'username': request.query_params.get('username', None),
                              'token': ""})
         else:
-            return Response(["Invalid Credentials"], status=status.HTTP_400_BAD_REQUEST)
+            return Response({'Login':"Invalid Credentials"}, status=status.HTTP_400_BAD_REQUEST)
 
     def post(self, request, format='json'):
         serializer = UserSerializer(data=request.data)

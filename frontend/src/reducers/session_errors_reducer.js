@@ -6,7 +6,7 @@ const SessionErrorsReducer = (state = {}, action) => {
     case RECEIVE_SESSION_ERRORS:
       const errors = [];
       Object.keys(action.errors).forEach((err) => {
-        errors.push(`${err}: ${action.errors[err]}`);
+        errors.push(`${err[0].toUpperCase()}${err.slice(1,err.length)}: ${action.errors[err]}`);
       });
       return errors;
     default:
