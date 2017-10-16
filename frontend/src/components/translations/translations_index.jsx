@@ -14,8 +14,7 @@ class TranslationsIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestTranslations(this.props.match.params.documentId)
-    .then((res) => console.log(res));
+    this.props.requestTranslations(this.props.match.params.documentId);
   }
 
 

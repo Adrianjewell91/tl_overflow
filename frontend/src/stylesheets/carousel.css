@@ -5506,12 +5506,12 @@ blockquote p {
   position: relative;
   left: 0;
   top: 0;
-  display: inline-flex;
+  display: block;
   margin-left: auto;
   margin-right: auto; }
   .slick-track:before, .slick-track:after {
     content: "";
-    display: inline-flex; }
+    display: block; }
   .slick-track:after {
     clear: both; }
   .slick-loading .slick-track {
@@ -5558,7 +5558,7 @@ blockquote p {
   cursor: pointer;
   background: transparent;
   color: transparent;
-  top: 50%;
+  top: 280px;
   -webkit-transform: translate(0, -50%);
   -ms-transform: translate(0, -50%);
   transform: translate(0, -50%);
