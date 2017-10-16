@@ -30,7 +30,7 @@ class TranslationNew extends React.Component {
     this.state.owner = this.props.currentUser.username;
     this.props.createTranslation(doc_id, this.state)
       .then(() => {
-        this.props.history.goBack();
+        this.props.history.push(`/documents/${doc_id}`);
       });
   }
 
