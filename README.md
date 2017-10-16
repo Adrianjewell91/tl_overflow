@@ -1,5 +1,13 @@
 # Translate Overflow
 
+https://pure-crag-76247.herokuapp.com/#/
+
+##Background
+
+Translate Overflow is a web application that harnesses the power of the internet community to provide a translation service where real people offer annotations and revisions to translation requests uploaded by users for FREE.   
+
+The application provides a solution for the translation of larger paragraphs and documents such as legal documents, medical records and essays by a community of translation experts.
+
 ## Features
 1. [Fully Functional Django Backend and React-Redux Frontend.](#django)
 
@@ -26,7 +34,7 @@ The backend of Translate Overflow is Django v. 1.11.6, and React v. 16.
 Translate Overflow’s user authentication logs the user into the application on both the frontend and the backend. Users can only create documents and revisions when they are logged in.
 
 ### <a name="translate"></a>Document and Translation Creation Using Yandex Translate API.
-When users create a new document on Translate Overflow, a Post request would be fired to the Yandex Translate API, then data from the API response is used to create a Translation of the document.
+When users create a new document on Translate Overflow, a Post request with `axios` will be fired to the Yandex Translate API, then data from the API response is used to create a Translation of the document.
 
 ### <a name="carousel"></a>React-Slick Carousel View Page for Revisions.
 An interactive react component we felt perfect for rendering the documents and translations.  The tiles of the carousel were styled to look like lifted pages for a real “paper-like” look.  The 1st page is always the original language text followed by the machine translation and subsequent revisions by users.
@@ -50,6 +58,9 @@ Translate Overflow is hosted on Heroic in a special way. A heroic provided-confi
 ### Implemented React Carousel.  
 The structuring of the divs in the page container and its styling proved very challenging.  The carousel would break without a very specific CSS setup.
 
+### Authentication
+
+Django provides built in authentication. The Challenge is accessing this feature through the frontend. Use `authenticate()` and `login()` with information parsed from `axios` requests.
 
 ## Future Implementation Plans
 
