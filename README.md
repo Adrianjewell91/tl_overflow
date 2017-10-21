@@ -86,7 +86,7 @@ Django provides built in authentication. The Challenge is accessing this feature
 4. Follow tutorials 1-5 in the Django REST Framework tutorial.
 5. Build a React App on top of your app using this tutorial: https://www.techiediaries.com/create-react-app-django/
 
-6. Pay attention to the `settings.py` configuration (change the “try:” line in your view to this line: with open(os.path.join('frontend', 'build', 'index.html'))
+6. Pay attention to the `settings.py` configuration (change the “try:” line in your view to this line: with open(os.path.join('frontend', 'build', 'index.html')).
 
 7. Build User auth using this tutorial: https://iheanyi.com/journal/user-registration-authentication-with-django-django-rest-framework-react-and-redux/. Then read our auth code to see how we changed it.
 

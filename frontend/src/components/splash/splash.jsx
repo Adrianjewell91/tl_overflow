@@ -8,6 +8,7 @@ class Splash extends Component {
     super(props);
     this.handleSignUp = this.handleSignUp.bind(this);
     this.handleLogIn = this.handleLogIn.bind(this);
+    this.handleDemoLogIn = this.handleDemoLogIn.bind(this);
     this.handleSignOut = this.handleSignOut.bind(this);
     this.state = {username: "", email: "", password: ""};
   }
@@ -31,6 +32,13 @@ class Splash extends Component {
     e.preventDefault();
     this.props.logIn({username: this.state.username,
                       password: this.state.password})
+    this.setState({username: "", password: ""});
+  }
+
+  handleDemoLogIn(e) {
+    e.preventDefault();
+    this.props.logIn({username: "demo",
+                      password: "1234567890"})
     this.setState({username: "", password: ""});
   }
 
@@ -73,6 +81,9 @@ class Splash extends Component {
               <button onClick={this.handleLogIn}>
                 Login
               </button>
+              <button className="demo-button" onClick={this.handleDemoLogIn}>
+                Demo
+              </button>
               <input type="submit" value="Sign Up"></input>
             </div>
           </form>
@@ -83,7 +94,7 @@ class Splash extends Component {
       <div className="splash">
         <div className="splash-content">
           <div className="splash-greeting">
-            <h2>Get better results with</h2>
+            <h2>Get revisions on</h2>
             <br/>
             <h1>Translate OverFlow</h1>
           </div>

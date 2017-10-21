@@ -70,6 +70,10 @@
   width: 100px;
 }
 
+.demo-button {
+  margin-left: 30px;
+}
+
 .splash-form button a {
   text-decoration: none;
   color: #03A9F4;

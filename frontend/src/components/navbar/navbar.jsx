@@ -29,7 +29,8 @@ class NavBar extends Component {
 
     const welcome = this.props.currentUser ?
       <div className="status-info-inner-container">
-        <button onClick={this.handleSignOut}>Sign Out!</button>
+        <span className="welcome-user_navbar">Welcome, {this.props.currentUser.username}</span>
+          <button onClick={this.handleSignOut}>Sign Out!</button>
       </div> :
       <div className="status-info-inner-container">
         <p>Please Sign In</p>
