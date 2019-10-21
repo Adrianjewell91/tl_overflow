@@ -9,7 +9,7 @@ django-filter==1.0.4
 djangorestframework==3.7.0
 drf-nested-routers==0.90.0
 gunicorn==19.7.1
-httpie==0.9.9
+httpie==1.0.3
 idna==2.6
 psycopg2==2.7.3.1
 Pygments==2.2.0
